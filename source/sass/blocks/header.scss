@@ -4,6 +4,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 77px;
     }
 
     &__logo {
@@ -33,10 +34,7 @@
 
         display: flex;
         font-size: 16px;
-        font-weight: 400;
-        line-height: 24px;
-        padding-top: 10px;
-        padding-right: 240px ;
+        margin: auto;
 
         @media (max-width: 767px) {
             display: none;
@@ -48,6 +46,7 @@
         }
 
         a {
+            display: block;
             padding: 15px 12px;
 
             @media (min-width: 1728px) {
@@ -61,7 +60,6 @@
         justify-content: center;
         gap: 25px;
         margin-left: auto;
-        padding-top: 8px;
 
         @media (min-width: 768px) {
             gap: 44px;
@@ -82,7 +80,7 @@
             }
         }
 
-        &--hidden {
+            &--hidden {
                 @media (min-width: 767px) {
                 display: none;
             }
