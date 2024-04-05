@@ -1,15 +1,12 @@
-.container{
-    margin: auto;
-    max-width: 1560px;
-    padding: 0 10px;
+.container {
+    margin: 0 auto;
+    padding: 15px 10px 0px 10px;
 
     @media (min-width: 768px) {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 20px 20px 0px 20px;
     }
 
     @media (min-width: 1728px) {
-        padding-left: 84px;
-        padding-right: 84px;
+        padding: 77px 84px 0px 84px;
     }
 }
