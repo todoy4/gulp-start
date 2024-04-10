@@ -60,7 +60,7 @@
         color: #000;
 
         @media (max-width: 767px) {
-            position: absolute;
+            position: relative;
             right: 0px;
             top: 75px;
             text-align: end;
@@ -115,7 +115,7 @@
         }
     }
 
-    &__nav--deskription {
+    &__description {
         display: none;
         font-size: 12px;
         font-weight: 400;
@@ -146,6 +146,7 @@
         justify-content: center;
         gap: 25px;
         margin-left: auto;
+        padding-top: 20px;
         position: relative;
         z-index: 101;
 
@@ -175,7 +176,7 @@
         }
     }
 
-        &--cloused {
+        &--closed {
                 display: none;   
         }
     }
