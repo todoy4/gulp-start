@@ -118,6 +118,9 @@
         }
     }
 
+    &__button {
+        @include clear-button;
+
         @media (min-width: 768px) {
             width: 458px;
             height: 87px;
@@ -135,7 +138,7 @@
         padding-top: 29px;
         padding-bottom: 32px;
         background:
-            url("../img/ultimate_image_mobile.svg"), 
+            url("/img/ultimate_image_mobile.svg"), 
             linear-gradient(180deg, #E4E4E4 0%, #FAFAFA 100%);
         background-size: 100% auto;
         background-repeat: no-repeat, no-repeat;
