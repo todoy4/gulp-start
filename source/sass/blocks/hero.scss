@@ -121,6 +121,13 @@
     &__button {
         @include clear-button;
 
+        display: block;
+        width: 100%;
+        height: 55px;
+        font-size: 20px;
+        font-weight: 600;
+        line-height: 30px;
+
         @media (min-width: 768px) {
             width: 458px;
             height: 87px;
@@ -138,7 +145,7 @@
         padding-top: 29px;
         padding-bottom: 32px;
         background:
-            url("/img/ultimate_image_mobile.svg"), 
+            url("../img/ultimate_image_mobile.svg"), 
             linear-gradient(180deg, #E4E4E4 0%, #FAFAFA 100%);
         background-size: 100% auto;
         background-repeat: no-repeat, no-repeat;
@@ -165,7 +172,7 @@
                 left: 43%;
                 width: calc(50vw + 8%);
                 background:
-                    url("/img/ultimate_image_desktop.svg"),
+                    url("../img/ultimate_image_desktop.svg"),
                     linear-gradient(90deg, #E4E4E4 0%, #FAFAFA 100%);
                 background-repeat: no-repeat, no-repeat;
                 background-position: -1% 92%;
