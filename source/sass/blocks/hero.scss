@@ -145,9 +145,9 @@
         padding-top: 29px;
         padding-bottom: 32px;
         background:
-            url("../img/ultimate_image_mobile.svg"), 
+            url("../img/ultimate.svg"), 
             linear-gradient(180deg, #E4E4E4 0%, #FAFAFA 100%);
-        background-size: 100% auto;
+        background-size: auto;
         background-repeat: no-repeat, no-repeat;
         background-position: 100% -2%;
         text-align: center;
@@ -170,9 +170,9 @@
                 top: 0;
                 bottom: 0;
                 left: 43%;
-                width: calc(50vw + 8%);
+                width: calc(50vw + 7%);
                 background:
-                    url("../img/ultimate_image_desktop.svg"),
+                    url("../img/ultimate.svg"),
                     linear-gradient(90deg, #E4E4E4 0%, #FAFAFA 100%);
                 background-repeat: no-repeat, no-repeat;
                 background-position: -1% 92%;
