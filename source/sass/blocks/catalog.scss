@@ -1,4 +1,6 @@
 .catalog {
+    
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -29,12 +31,7 @@
     }
 
     &__title {
-        @media (min-width: 768px) {
-            font-size: 45px;
-            margin-top: 0;
-            margin-bottom: 62px;
-            text-align: center;
-        }
+
 
         &::before,
         &::after {

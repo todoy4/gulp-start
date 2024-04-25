@@ -1,0 +1,26 @@
+.reviews {
+         &__title {
+             font-size: 32px;
+             font-weight: 500;
+             line-height: 44px;
+             margin-bottom: 38px;
+             span {
+                 @media (max-width: 767px) {
+                     display: none;
+                 }
+             }
+         }
+
+         &__list {
+             display: flex;
+             flex-direction: column;
+             justify-content: center;
+             gap: 20px;
+             margin-bottom: 49px;
+             @media (min-width: 1728px) {
+                 flex-direction: row;
+                 gap: 68px;
+             }
+         }
+     }
+    

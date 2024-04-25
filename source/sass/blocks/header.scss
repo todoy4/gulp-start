@@ -152,19 +152,13 @@
         justify-content: center;
         gap: 25px;
         margin-left: auto;
-        padding-top: 20px;
+        padding-top: 8px;
         position: relative;
         z-index: 101;
 
         @media (min-width: 768px) {
             gap: 44px;
         }
-    }
-
-    &__button {
-        @include clear-button;
-
-        position: relative;
 
         img {
             width: 20px;
@@ -176,16 +170,38 @@
             }
         }
 
+        button {
+            @include clear-button;
+
+            position: relative;
+        }
+    }
+
+    &__button-open {
+        @media (min-width: 768px) {
+            display: none;
+        }
+
         &--hidden {
-            @media (min-width: 768px) {
             display: none;
         }
     }
 
-        &--closed {
-                display: none;   
+    &__button-closed {
+        &--hidden {
+            display: none;
         }
     }
+
+    .header__button {
+
+        &--hidden {
+            @media (min-width: 768px) {
+                display: none;
+            }
+        }
+    }
+    
 
     &__item-counter {
         position: absolute;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
     <link rel="stylesheet" href="css/style.min.css">
+    
   </head>
   <body>
     <header class="header">
@@ -41,24 +42,27 @@
         </nav>
 
         <div class="header__user-action">
+
           <button class="header__button ">
             <img src="img/search.svg" alt="search icon">
           </button>
 
           <button class="header__button ">
             <img src="img/shop.svg" alt="shopping cart icon">
-            <span class="header__item-counter">10</span>
+            <span class="header__item-counter">0</span>
           </button>
 
-          <button class="header__button header__button--hidden">
+          <button class="header__button-open header__button">
             <img src="img/menu.svg" alt="menu icon">
           </button>
-          <button class="header__button header__button--closed">
+          <button class="header__button-closed--hidden  header__button">
             <img src="img/cloused.svg" alt="closed icon">
           </button>
         </div>
       </div>
     </header>
+
+  
     
     <main class="hero">
       <div class="hero__container container">
@@ -84,6 +88,93 @@
           <span class="hero__product-price">3999 ₽</span>
         </div>
       </div>
+
+
+      <section class="marketplace">
+        <div class="marketplace__container">
+
+          <ul class="marketplace__list">
+
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/ozon.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/wildberries.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/sbermarket.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/yandexMarket.png" alt="marketplace icon">
+            </li> 
+          </ul>
+
+          <ul class="marketplace__list-scroll">
+
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/ozon.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/wildberries.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/sbermarket.svg" alt="marketplace icon">
+            </li>
+            <li class="marketplace__item">
+              <img  class="marketplace__image" src="img/yandexMarket.png" alt="marketplace icon">
+            </li> 
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="slide-banner">
+        <div class="slide-banner__container container">
+          <div class="slide-banner__wrapper">
+            <ul class="slide-banner__list banner">
+              <li class="banner__item  banner__item--border-round banner__item--bg-color banner__item--bg-slick">
+                
+                <div class="banner__content-wrapper">
+                  <span class="banner__subtitle banner__title--text-size banner__title--text-white">Ты готов</span>
+                  <h3 class="banner__title banner__title--text-size banner__title--text-white">
+                    проложить свой путь?
+                  </h3>
+                  <button class="banner__button">См Все</button>
+                  <ul class="banner__link-list">
+
+                    <li><a href="#" class="banner__link-item">
+                      <img src="img/grey__sneakers.png" alt="sneaker icon"></a>
+                    </li>
+
+                    <li><a href="#" class="banner__link-item">
+                      <img src="img/blue__sneakers.png" alt="sneaker icon"></a>
+                    </li>
+
+                    <li><a href="#" class="banner__link-item">
+                      <img src="img/pink__sneakers.png" alt="sneaker icon"></a>
+                    </li>
+
+                  </ul>
+                </div>
+                
+              </li>
+            </ul>
+
+            <div class="slide-banner__swaper ">
+              <button class="slide-banner__swap-left"><img src="img/slide-left.svg" alt="#"></button>
+              <button class="slide-banner__swap-right"><img src="img/slide-right.svg" alt="#"></button>
+            </div>
+
+            <div class="slide-banner__indicator slider-indicator">
+              <div class="slider-indicator__item slider-indicator__item--small slider-indicator__item--bg-white slider-indicator__item--round"></div>
+              <div class="slider-indicator__item slider-indicator__item--big slider-indicator__item--bg-white slider-indicator__item--half-round"></div>
+              <div class="slider-indicator__item slider-indicator__item--small slider-indicator__item--bg-white slider-indicator__item--round"></div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
 
      
 
@@ -141,9 +232,40 @@
         </div>
       </section>
 
-    </main>
+      <section class="reviews">
+        <div class="reviews__container container">
+          <h2 class="reviews__title heading-style">Отзывы О Кроссовках</h2>
 
-    
+          <ul class="reviews__list">
+
+            <li class="reviews__item  item item--bg-gray item--border-dark-gray">
+              <img class="item__image item__image--g-2-2" src="img/image__user-woman.png" alt="">
+              <div class="item__name-rating card__name-rating--g-2-5">
+                <span class="item__name">Ava Joshi</span>
+                <div class="item__star item__star--4-5"></div>
+              </div>
+              <p class="item__coment item__coment--g-1-5">Lorem ipsum dolor sit amet, consectetur<br>
+                 adipiscing elit, sed do eiusmod tempor<br>
+                  incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+
+            <li class="reviews__item item item--bg-gray item--border-dark-gray">
+              <img class="item__image item__image--g-2-2" src="img/img__user-man.png" alt="">
+              <div class="item__name-rating card__name-rating--g-2-5">
+                <span class="item__name">Ava Joshi</span>
+                <div class="item__star item__star--4-5"></div>
+              </div>
+              <p class="item__coment item__coment--g-1-5">Lorem ipsum dolor sit amet, consectetur<br>
+                 adipiscing elit, sed do eiusmod tempor<br>
+                  incididunt ut labore et dolore magna aliqua.</p>
+            </li>
+            
+          </ul>
+        </div>
+      </section>
+
+    </main>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
 
