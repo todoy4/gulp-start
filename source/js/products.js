@@ -26,6 +26,6 @@ export default [
         name: 'slick canvas shoe',
         price: 2999,
         oldPrice: 3999,
-        img: 'img/slick_canvas_shoe.png',
+        img: 'img/slick_canvas_shoe_black.png',
     }
 ]
