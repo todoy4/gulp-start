@@ -1,8 +1,6 @@
 .product {
     width: 100%;
     padding: 37px 19px 23px;
-    border: 2px solid #DEDEDE;
-    border-radius: 20px;
     position: relative;
 
     @media (min-width: 768px) {
@@ -11,6 +9,11 @@
 
     @media (min-width: 1728px) {
         padding: 28px 40px 27px;
+    }
+
+    &--border-radius {
+        border: 2px solid #DEDEDE;
+        border-radius: 20px;
     }
 
     &--big {

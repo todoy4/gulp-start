@@ -16,10 +16,6 @@ const disappearanceMenu = () => {
     headerClosedMenu.addEventListener('click', disappearanceMenu);
 }
 
-
-
-
-
 const productButton = document.querySelectorAll('.product__button');
 const modal = document.querySelector('.modal');
 const modalCloseButton = document.querySelector('.modal__close-button');
