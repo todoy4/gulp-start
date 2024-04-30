@@ -20,12 +20,12 @@ const productButton = document.querySelectorAll('.product__button');
 const modal = document.querySelector('.modal');
 const modalCloseButton = document.querySelector('.modal__close-button');
 const modalResume = document.querySelector('.modal__resume');
-const shadow = document.querySelector('.shadow');
+const overlay = document.querySelector('.overlay');
 
 productButton.forEach((button) => {
     button.addEventListener('click', () => {
         modal.classList.remove('modal--hidden');
-        shadow.classList.remove('shadow--hidden');
+        overlay.classList.remove('overlay--hidden');
         modalCloseButton.addEventListener('click', close);
         modalResume.addEventListener('click', close);
     });
@@ -33,7 +33,7 @@ productButton.forEach((button) => {
 
 const close = () => { 
     modal.classList.add('modal--hidden');
-    shadow.classList.add('shadow--hidden');
+    overlay.classList.add('overlay--hidden');
     modalResume.removeEventListener('click', close);
     modalCloseButton.removeEventListener('click', close);  
 }
