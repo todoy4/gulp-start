@@ -55,7 +55,7 @@
           <button class="header__button-open header__button">
             <img src="img/menu.svg" alt="menu icon">
           </button>
-          <button class="header__button-closed  header__button-closed--hidden header__button">
+          <button class="header__button-closed--hidden  header__button">
             <img src="img/cloused.svg" alt="closed icon">
           </button>
         </div>
@@ -127,66 +127,6 @@
         </div>
       </section>
 
-      <section class="popular-block">
-        <div class="popular-block__container container">
-
-          <div class="popular-block__title-block">
-            <span class="popular-block__subtitle">Сегодня В Тренде</span>
-            <h3 class="popular-block__title"> Самые популярные</h3>
-            <p class="popular-block__text">Посмотрите, что чаще всего покупают у нас</p>
-            <button class="popular-block__show-all">Показать все</button>
-          </div>
-
-          <div class="popular-block__slider">
-
-              <div class="popular-block__product-wrapper">
-
-                <div class="product product--border-radius">
-                  <img class="product__image product__image--slide-size" src="img/black__sneakers.png" alt="sneaker image 2">
-                  <span class="product__name">Running sport shoe</span>
-                  <div class="product__price-wrapper">
-                    <span class="product__price-new">3999 ₽</span>
-                    <button class="product__button product__button--slide-size"></button>
-                  </div>
-                </div>
-
-                <div class="product product--border-radius product--hidden-slide">
-                  <img class="product__image product__image--slide-size" src="img/grey__sneakers.png" alt="sneaker image 2">
-                  <span class="product__name">Running sport shoe</span>
-                  <div class="product__price-wrapper">
-                    <span class="product__price-new">3999 ₽</span>
-                    <button class="product__button product__button--slide-size"></button>
-                  </div>
-                </div>
-
-                <div class="product product--border-radius product--hidden-slide">
-                  <img class="product__image product__image--slide-size" src="img/blue__sneakers.png" alt="sneaker image 2">
-                  <span class="product__name">Running sport shoe</span>
-                  <div class="product__price-wrapper">
-                    <span class="product__price-new">3999 ₽</span>
-                    <button class="product__button product__button--slide-size"></button>
-                  </div>
-                </div>
-
-              </div>
-              <div class="popular-block__button">
-                <button class="popular-block__slide-left"><img src="img/slide-left.svg" alt="#"></button>
-                <button class="popular-block__slide-right"><img src="img/slide-right.svg" alt="#"></button>
-              </div>
-
-              <div class="popular-block__indicator slider-pagination">
-                <button type="button" class="slider-pagination__item slider-pagination__item--small slider-pagination__item--bg-black slider-pagination__item--round"></button>
-                <button type="button" class="slider-pagination__item slider-pagination__item--big slider-pagination__item--bg-black slider-pagination__item--half-round"></button>
-                <button type="button" class="slider-pagination__item slider-pagination__item--small slider-pagination__item--bg-black slider-pagination__item--round"></button>
-              </div>
-              
-          </div>
-
-          <button class="popular-block__show-all-mobile">Показать все</button>
-
-        </div>
-      </section>
-
 
       <section class="slide-banner">
         <div class="slide-banner__container container">
@@ -195,8 +135,8 @@
               <li class="banner__item  banner__item--border-round banner__item--bg-color banner__item--bg-slick">
                 
                 <div class="banner__content-wrapper">
+                  <span class="banner__subtitle banner__title--text-size banner__title--text-white">Ты готов</span>
                   <h3 class="banner__title banner__title--text-size banner__title--text-white">
-                    Ты готов<br>
                     проложить свой путь?
                   </h3>
                   <button class="banner__button">См Все</button>
@@ -221,8 +161,8 @@
             </ul>
 
             <div class="slide-banner__swaper ">
-              <button class="slide-banner__swap slide-banner__swap--left"><img src="img/slide-left.svg" alt="#"></button>
-              <button class="slide-banner__swap slide-banner__swap--right"><img src="img/slide-left.svg" alt="#"></button>
+              <button class="slide-banner__swap-left"><img src="img/slide-left.svg" alt="#"></button>
+              <button class="slide-banner__swap-right"><img src="img/slide-right.svg" alt="#"></button>
             </div>
 
             <div class="slide-banner__indicator slider-indicator">
@@ -236,23 +176,12 @@
       </section>
 
 
-     <div class="overlay overlay--hidden"></div>
+     
 
 
       <section class="catalog">
 
         <div class="catalog__container container">
-
-          <div class="catalog__modal-add modal modal--hidden">
-            <div class="modal__container container">
-              <button type="button" class="modal__close-button">
-                <img class="" src="img/cloused.svg" alt="cloused icon">
-              </button>
-              <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
-              <button type="button" class="modal__button modal__resume">Продолжить Покупки</button>
-            </div>  
-          </div>
-
           <h2 class="catalog__title heading-style">Best Selling</h2>
 
           <div class="catalog__action">
@@ -260,28 +189,47 @@
             <button class="catalog__button">Женские</button>
           </div>
 
-          <template id="product">
+          <div class="catalog__product-wrapper">
 
-  
-              <div class="catalog__product">
-                <div class="product product--border-radius">
-                  <img class="product__image" src="img/slick_formal_sneaker.png" alt="sneaker image 1">
-                  <span class="product__name">Slick formal sneaker shoe</span>
-                  <div class="product__price-wrapper">
-                    <span class="product__price-new">2999 ₽</span>
-                    <span class="product__price-old">4999 ₽</span>
-                    <button class="product__button"></button>
-                  </div>
+            <div class="catalog__product catalog__product--g-1-3">
+              <div class="product product--big product--hot-icon">
+                <img class="product__image" src="img/slick_formal_sneaker.png" alt="sneaker image 1">
+                <span class="product__name">Slick formal sneaker shoe</span>
+                <div class="product__price-wrapper">
+                  <span class="product__price-new">2999 ₽ </span>
+                  <span class="product__price-old">4999 ₽</span>
+                  <button class="product__button product__button--big"></button>
                 </div>
               </div>
-
-
-          </template>
-
-          <div class="catalog__product-wrapper">
-            <button class="catalog__show-all button-style">Показать все</button>
-          </div>
+            </div>
+            
+            <div class="catalog__product catalog__product--small">
+              <div class="product">
+                <img class="product__image" src="img/slick_canvas_shoe_black.png" alt="sneaker image 2">
+                <span class="product__name">Slick sneaker shoe</span>
+                <div class="product__price-wrapper">
+                  <span class="product__price-new">2999 ₽ </span>
+                  <span class="product__price-old">3999 ₽ </span>
+                  <button class="product__button"></button>
+                </div>
+              </div>
+            </div>
               
+            <div class="catalog__product catalog__product--small">
+              <div class="product product--new-icon">
+                <img class="product__image" src="img/slick_sneaker_shoe.png" alt="sneaker image">
+                <span class="product__name">Slick canvas shoe</span>
+                <div class="product__price-wrapper">
+                  <span class="product__price-new">2999 ₽ </span>
+                  <span class="product__price-old">3999 ₽ </span>
+                  <button class="product__button"></button>
+                </div>
+              </div>
+            </div>
+              
+          </div>
+            <button class="catalog__show-all button-style">Показать все</button>
+        </div>
       </section>
 
       <section class="reviews">
@@ -292,7 +240,7 @@
 
             <li class="reviews__item  item item--bg-gray item--border-dark-gray">
               <img class="item__image item__image--g-2-2" src="img/image__user-woman.png" alt="">
-              <div class="item__name-rating item__name-rating--g-2-5">
+              <div class="item__name-rating card__name-rating--g-2-5">
                 <span class="item__name">Ava Joshi</span>
                 <div class="item__star item__star--4-5"></div>
               </div>
@@ -303,7 +251,7 @@
 
             <li class="reviews__item item item--bg-gray item--border-dark-gray">
               <img class="item__image item__image--g-2-2" src="img/img__user-man.png" alt="">
-              <div class="item__name-rating item__name-rating--g-2-5">
+              <div class="item__name-rating card__name-rating--g-2-5">
                 <span class="item__name">Ava Joshi</span>
                 <div class="item__star item__star--4-5"></div>
               </div>
@@ -316,57 +264,8 @@
         </div>
       </section>
 
-      <footer class="footer">
-        <div class="footer__container container">
-
-          <div class="footer__manner-add manner manner--hidden">
-            <div class="manner__container container">
-              <button type="button" class="manner__close-button">
-                <img class="" src="img/cloused.svg" alt="cloused icon">
-              </button>
-              <h3 class="manner__title">Проверьте ваш email <br> и подтвердите подписку</h3>
-            </div>  
-          </div>
-           
-          <div class="footer__wrapper">
-
-          <div class="footer__content-wrapper">
-            <a href="#" class="footer__logo"><img  src="img/footer__logo.svg" alt="slick logo image"></a>
-            <p class="footer__text">Какие мы крутые, у нас лучшие кроссы и ваще... всё.</p>
-            <ul class="footer__social-list">
-              <li class="footer__list-item"><a class="footer__list-link" href="#"><img src="img/footer__tg.svg" alt="logo social link tg"></a></li>
-              <li class="footer__list-item"><a class="footer__list-link" href="#"><img src="img/footer__vk.svg" alt="logo social link vk"></a></li>
-            </ul>
-          </div>
-
-          <div class="footer__list-wrapper">
-            <span>Быстрые ссылки</span>
-            <ul class="footer__list">
-              <li class="footer__item"><a href="">Главная</a></li>
-              <li class="footer__item"><a href="">Магазин</a></li>
-              <li class="footer__item"><a href="">Контакты</a></li>
-            </ul>
-          </div>
-
-          <div class="footer__form-wrapper">
-            <p class="footer__form-text">Подпишись на наши акции</p>
-            <form class="footer__subscription-form">
-              <input class="footer__mail" type="email" placeholder="Введи email...">
-              <span class="footer__form-line"></span>
-              <button class="footer__button" type="submit">Подписаться</button>
-            </form>
-            <span class="footer__line"></span>
-            <span class="footer__bottom-text">www.slick.com©all right reserve</span>
-          </div>
-
-          </div>
-        </div>
-
-      </footer>
-
     </main>
-    <script src="js/main.js" defer type="module"></script>
-    <script src="js/menu.js" defer></script>
+    <script src="js/script.js" defer></script>
   </body>
 </html>
 
