@@ -48,6 +48,7 @@
              @media (max-width: 767px) {
                 display: flex;
                 flex-direction: column;
+                padding: 15px 10px 20px 20px;
                 position: absolute;
                 z-index: 100;
                 top: 0;
@@ -127,7 +128,6 @@
         line-height: 18px;
         text-align: end;
         margin-top: auto;
-        padding: 15px 10px 20px 20px;
 
         @media (max-width: 767px) {
             display: block;
