@@ -1,0 +1,46 @@
+.slide-banner {
+    &__wrapper {
+        position: relative;
+    }
+
+    &__indicator {
+        position: absolute;
+        top: 94%;
+        right: 42%;
+
+        @media (min-width: 768px) {
+            top: 95%;
+            right: 0;
+        }
+    }
+
+    &__swap {
+        display: none;
+
+        &--left {
+            @include clear-button;
+
+            @media (min-width: 768px) {
+                display: block;
+                position: absolute;
+                width: 19px;
+                height: 11px;
+                top: 48%;
+                left: 1%;
+                }
+            }
+        &--right {
+            @include clear-button;
+
+            @media (min-width: 768px) {
+                display: block;
+                position: absolute;
+                width: 19px;
+                height: 11px;
+                top: 48%;
+                right: 1%;
+                transform: rotate(180deg);
+                }
+            }
+        }
+    }
