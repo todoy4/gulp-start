@@ -17,16 +17,9 @@
     &__swap {
         display: none;
 
-        @media (min-width: 768px) {
-            display: block;
-            position: absolute;
-            width: 19px;
-            height: 11px;
-            top: 48%;
-            left: 1%;
-
         &--left {
             @include clear-button;
+
             @media (min-width: 768px) {
                 display: block;
                 position: absolute;
@@ -38,6 +31,7 @@
             }
         &--right {
             @include clear-button;
+
             @media (min-width: 768px) {
                 display: block;
                 position: absolute;
@@ -50,4 +44,3 @@
             }
         }
     }
-}
