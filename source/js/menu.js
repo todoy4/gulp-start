@@ -37,3 +37,23 @@ const close = () => {
     modalResume.removeEventListener('click', close);
     modalCloseButton.removeEventListener('click', close);  
 }
+
+const footerButton = document.querySelector('.footer__button');
+const mannerCloseButton = document.querySelector('.manner__close-button');
+const manner = document.querySelector('.manner');
+
+footerButton.addEventListener('click' , () => {
+    manner.classList.remove('manner--hidden');
+    overlay.classList.remove('overlay--hidden');
+    mannerCloseButton.addEventListener('click', closed);
+});
+
+const closed = () => {
+    manner.classList.add('manner--hidden');
+    overlay.classList.add('overlay--hidden');
+    mannerCloseButton.removeEventListener('click', closed);
+}
+
+footerButton.addEventListener( `click`, (event) => {
+    event.preventDefault();
+});
