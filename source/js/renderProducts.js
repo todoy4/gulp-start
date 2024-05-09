@@ -1,4 +1,5 @@
 export default (products, template, target, isTargetList = false, templateClass = '') => {
+    
     const fragment = document.createDocumentFragment();
 
     let productEl = template.querySelector('.catalog__product');
@@ -23,12 +24,15 @@ products.forEach(product => {
     const priceEl = itemEl.querySelector('.product__price-new');
     const oldPriceEl = itemEl.querySelector('.product__price-old');
     const buttonEl = itemEl.querySelector('.product__button');
-    const { id, name, img, price, oldPrice, big, status } = product;
+
+    const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
+       
     itemEl.dataset.productId = id;
     imageEl.src = img;
     nameEl.textContent = name;
     priceEl.textContent = `${price} ₽`;
     oldPriceEl.textContent = `${oldPrice} ₽`;
+    
     if(big) {
         productItem.classList.add('product--big');
         itemEl.classList.add('catalog__product--g-1-3');
@@ -41,7 +45,7 @@ products.forEach(product => {
     }
     fragment.appendChild(itemEl);
     });
-    //очищаем target от даннных (контейнер)это catalog__list в разметке
+
     target.innerHTML = '';
     target.appendChild(fragment);
 }
