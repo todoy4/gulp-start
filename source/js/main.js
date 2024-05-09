@@ -1,4 +1,4 @@
-import { getData } from "./getData.js";
+import { getData } from "./api.js";
 import renderProducts from "./renderProducts.js";
 
 
