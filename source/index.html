@@ -43,18 +43,21 @@
 
         <div class="header__user-action">
 
-          <button class="header__button ">
+          <button class="header__button">
             <img src="img/search.svg" alt="search icon">
           </button>
 
-          <button class="header__button ">
-            <img src="img/shop.svg" alt="shopping cart icon">
-            <span class="header__item-counter">0</span>
-          </button>
+          <div class="header__button-shop">
+            <a class="header__button-link" href="#">
+              <span class="header__item-counter">0</span>
+              <img src="img/shop.svg" alt="shopping cart icon">
+            </a>
+          </div>
 
           <button class="header__button-open header__button">
             <img src="img/menu.svg" alt="menu icon">
           </button>
+
           <button class="header__button-closed  header__button-closed--hidden header__button">
             <img src="img/cloused.svg" alt="closed icon">
           </button>
@@ -243,9 +246,9 @@
 
         <div class="catalog__container container">
 
-          <div class="catalog__modal-add modal modal--hidden">
+          <div class="catalog__modal-add modal modal--hidden" id="catalog-modal">
             <div class="modal__container container">
-              <button type="button" class="modal__close-button">
+              <button type="button" class="modal__close">
                 <img class="" src="img/cloused.svg" alt="cloused icon">
               </button>
               <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
@@ -367,6 +370,42 @@
     </main>
     <script src="js/main.js" defer type="module"></script>
     <script src="js/menu.js" defer></script>
+
+
+  <div id="modal_cart_error" class="modal modal--hidden modal--size">
+    <button type="button" class="modal__close"><img src="img/cloused.svg" alt="icon of close button"></button>
+    <span class="modal__text modal__text--red">Ошибка!</span>
+    <p class="modal__description">Что-то пошло не так. Мы уже знаем о проблеме. Зайдите позже.</p>
+    <button class="modal__continue">Продолжить покупки</button>
+  </div>
+
+  <div class="shopping-cart">
+    <template id="shopping-cart-product">
+      <li class="shopping-cart__item">
+        <a href="#" class="shopping-cart__link">
+          <img class="shopping-cart__image" src="img/black_test.png" alt="">
+        </a>
+        <p class="shopping-cart__name">Running sport shoe</p>
+        <div class="shopping-cart__plusminus-button">
+          <span class="shopping-cart__minus">-</span>
+          <span class="shopping-cart__count">1</span>
+          <span class="shopping-cart__plus">+</span>
+        </div>
+        <span class="shopping-cart__price">3999 ₽</span>
+      </li>
+    </template>
+    <button type="button" class="shopping-cart__close"><img src="img/cloused.svg" alt="icon of close button"></button>
+    <span class="shopping-cart__title">Корзина товаров</span>
+    <ul class="shopping-cart__list"></ul>
+    <div class="shopping-cart__amount-product">
+      <span class="shopping-cart__total">Итого</span>
+      <span class="shopping-cart__amount">0шт.</span>
+      <span class="shopping-cart__cost">0₽</span>
+    </div>
+    <div class="shopping-cart__order-button">
+      <a href="#">Оформить заказ</a>
+    </div>
+  </div>
   </body>
 </html>
 

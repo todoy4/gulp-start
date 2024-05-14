@@ -1,3 +1,5 @@
+import { addProductToCart } from './productCart.js';
+
 export default (products, template, target, isTargetList = false, templateClass = '') => {
     
     const fragment = document.createDocumentFragment();
@@ -26,7 +28,19 @@ products.forEach(product => {
     const buttonEl = itemEl.querySelector('.product__button');
 
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
-       
+    
+    buttonEl.addEventListener('click', () => {
+        addProductToCart(
+            {
+                id: product.id,
+                name: product.name,
+                image: product.img,
+                price: product.price,
+            },
+            true
+        );
+    });
+
     itemEl.dataset.productId = id;
     imageEl.src = img;
     nameEl.textContent = name;

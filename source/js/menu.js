@@ -18,7 +18,7 @@ const disappearanceMenu = () => {
 
 const productButton = document.querySelectorAll('.product__button');
 const modal = document.querySelector('.modal');
-const modalCloseButton = document.querySelector('.modal__close-button');
+const modalCloseButton = document.querySelector('.modal__close');
 const modalResume = document.querySelector('.modal__resume');
 const overlay = document.querySelector('.overlay');
 

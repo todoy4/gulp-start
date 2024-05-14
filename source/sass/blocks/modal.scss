@@ -14,7 +14,7 @@
         align-items: center;
     }
 
-    &__close-button {
+    &__close {
         @include clear-button;
         
         padding-left: 370px;
