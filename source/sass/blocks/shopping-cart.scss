@@ -8,14 +8,15 @@
     font-weight: 500;
     line-height: 19px;
     position: fixed;
-    top: 50px;
-    right: 25px;
+    top: 450px;
+    right: 200px;
     z-index: 110;
     display: none;
 
     @media (min-width: 768px) {
-        top: 70px;
-        right: 22px;
+        top: 138px;
+        left: 522px;
+        width: 614px;
     }
 
     @media (min-width: 1728px) {
@@ -23,8 +24,8 @@
         font-size: 21px;
         line-height: 29px;
         padding: 30px 20px 19px;
-        top: 135px;
-        right: 75px;
+        top: 225px;
+        left: 550px;
     }
 
     &--showed {

@@ -26,16 +26,16 @@ const removeProductFromCart = (productId) => {
 
 const addProductToCart = (product, isClick = false) => {
 
-    console.log(product);
-    if(!product || (isClick && getStorage('cart')?.map(el => Number(el.id))?.includes(product.id))) {
-        openModal(modalCartError);
-        return;
-    }
+    // console.log(product);
+    // if(!product || (isClick && getStorage('cart')?.map(el => Number(el.id))?.includes(product.id))) {
+    //     openModal(modalCartError);
+    //     return;
+    // }
 
     const node = cartProductTemplate.querySelector('.shopping-cart__item').cloneNode(true);
 
     node.dataset.productId = product.id;
-    node.querySelector('.shopping-cart__image').src = product.img;
+    node.querySelector('.shopping-cart__image').src = product.image;
     node.querySelector('.shopping-cart__name').textContent = product.name;
     node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
 
@@ -84,7 +84,7 @@ const closeCart = (event) => {
 
 cartOpenedButton.addEventListener('click', openCart);
 
-document.addEventListener('click', closeCart);
+// document.addEventListener('click', closeCart);
 
 if(getStorage('cart')?.length) {
     getStorage('cart').forEach(product => {

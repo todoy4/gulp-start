@@ -7,12 +7,8 @@ export const addToStorage = (data, storageName) => {
     const storageData = JSON.parse(localStorage.getItem(storageName));
 
     if(storageData) {
-        if(storageData.map(el => el.id).includes(data.id)) {
-            return;
+            storageArr = [...storageData, ...storageArr];
         }
-
-        storageArr = [...storageData, ...storageArr];
-    }
     localStorage.setItem(storageName, JSON.stringify(storageArr));
 };
 
