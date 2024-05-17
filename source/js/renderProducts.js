@@ -26,6 +26,7 @@ products.forEach(product => {
     const priceEl = itemEl.querySelector('.product__price-new');
     const oldPriceEl = itemEl.querySelector('.product__price-old');
     const buttonEl = itemEl.querySelector('.product__button');
+    
 
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
     
@@ -40,6 +41,8 @@ products.forEach(product => {
             true
         );
     });
+
+    
 
     itemEl.dataset.productId = id;
     imageEl.src = img;

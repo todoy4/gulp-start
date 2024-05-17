@@ -1,5 +1,5 @@
 import { addToStorage, removeFromStorage, getStorage } from './storageLocal.js';
-import { openModal, closeModal } from './modal.js';
+import { openModal } from  './modal.js';
 
 const modalCart = document.querySelector('#catalog-modal');
 const modalCartError = document.querySelector('#modal_cart_error');
@@ -11,6 +11,7 @@ const cartCount = blockMenu.querySelector('.header__item-counter');
 const costOfProduct = cart.querySelector('.shopping-cart__cost');
 const countOfProduct = cart.querySelector('.shopping-cart__amount');
 const cartProductTemplate = document.querySelector('#shopping-cart-product').content;
+
 
 const removeProductFromCart = (productId) => {
     const node = cartList.querySelector(`[data-product-id="${productId}"]`);
@@ -46,7 +47,6 @@ const addProductToCart = (product, isClick = false) => {
     }
 
     cartList.append(node);
-    addToStorage(product, 'cart');
     cartCount.textContent = cartList.childElementCount;
     countOfProduct.textContent = `${cartList.childElementCount} шт.`
     costOfProduct.textContent = costOfCart();
@@ -60,34 +60,11 @@ const costOfCart = () => {
     );
 };
 
-const openCart = (event) => {
-    event.preventDefault();
 
-    if(!cartList.childElementCount) {
-        return;
-    }
 
-    cart.classList.add('shopping-cart--showed');
-    overlay.classList.remove('overlay--hidden');
-    cart.querySelector('.shopping-cart__close').addEventListener('click', closeCart);
-};
-
-const closeCart = (event) => {
-    if(blockMenu.contains(event.target)) {
-        return;
-    }
-
-    if(cart.classList.contains('shopping-cart--showed')) {
-        event.preventDefault();
-    }
-
-    overlay.classList.add('overlay--hidden');
-    cart.classList.remove('shopping-cart--showed');
-};
-
-cartOpenedButton.addEventListener('click', openCart);
-
-document.addEventListener('click', closeCart);
+cartOpenedButton.addEventListener('click', (event) => {
+    openModal(cart, event)
+})
 
 if(getStorage('cart')?.length) {
     getStorage('cart').forEach(product => {
