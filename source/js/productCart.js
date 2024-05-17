@@ -3,7 +3,6 @@ import { openModal, closeModal } from './modal.js';
 
 const modalCart = document.querySelector('#catalog-modal');
 const modalCartError = document.querySelector('#modal_cart_error');
-console.log(modalCartError);
 const blockMenu = document.querySelector('.header__button-shop');
 const cart = document.querySelector('.shopping-cart');
 const cartList = cart.querySelector('.shopping-cart__list');
@@ -39,6 +38,8 @@ const addProductToCart = (product, isClick = false) => {
     node.querySelector('.shopping-cart__name').textContent = product.name;
     node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
 
+    
+    
 
     if(isClick) {
         openModal(modalCart);
@@ -67,6 +68,7 @@ const openCart = (event) => {
     }
 
     cart.classList.add('shopping-cart--showed');
+    overlay.classList.remove('overlay--hidden');
     cart.querySelector('.shopping-cart__close').addEventListener('click', closeCart);
 };
 
@@ -79,12 +81,13 @@ const closeCart = (event) => {
         event.preventDefault();
     }
 
+    overlay.classList.add('overlay--hidden');
     cart.classList.remove('shopping-cart--showed');
 };
 
 cartOpenedButton.addEventListener('click', openCart);
 
-// document.addEventListener('click', closeCart);
+document.addEventListener('click', closeCart);
 
 if(getStorage('cart')?.length) {
     getStorage('cart').forEach(product => {
