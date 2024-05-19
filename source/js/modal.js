@@ -1,26 +1,29 @@
 const overlay = document.querySelector('.overlay');
 
-const closeModal = (event) => {
-    const modals = document.querySelectorAll('.modal');
-
-    modals.forEach(modal => {
-        if(modal.classList.contains('modal--hidden')) {
-            const modalCloseButton = modal.querySelector('.modal__close');
-
-            if(event.target === overlay || event.target === modalCloseButton) {
-                modal.classList.add('modal--hidden');
-                modalCloseButton.removeEventListener('click', closeModal);
-            }
-        }
-    })
+export const closeModal = (event) => {
+    const modal = document.querySelector('.modal');
+    const modalCloseButton = modal.querySelector('.modal__close');
+    const modalResume = modal.querySelector('.modal__resume');
+    
+    if (event.target === modalCloseButton || event.target === modalResume || event.target === overlay) {
+        modal.classList.add('modal--hidden');
+        overlay.classList.add('overlay--hidden');
+        modal.querySelector('.modal__close').removeEventListener('click', closeModal);
+    }
 };
 
-export const openModal =  (modal, event) => {
-    event.preventDefault();
+export const openModal =  (event) => {
+    const modal = document.querySelector('.modal');
     const modalCloseButton = modal.querySelector('.modal__close');
+    const modalResume = modal.querySelector('.modal__resume');
+    overlay.classList.remove('overlay--hidden');
     modal.classList.remove('modal--hidden');
-
+    
     modalCloseButton.addEventListener('click', closeModal);
-}
+    overlay.addEventListener('click', closeModal);
+    if (modalResume) {
+    modalResume.addEventListener('click', closeModal);
+    }
+    overlay.addEventListener('click', closeModal);
+};
 
-document.addEventListener('click', closeModal);
