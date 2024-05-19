@@ -1,12 +1,42 @@
 .modal {
-    background-color: #FBFBFB;
-    width: 504px;
-    height: 258px;
-    border-radius: 15px;
-    position: relative;
+    padding: 20px 23px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: -1px 3px 17px 3px rgb(0 0 0 / 20%);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 110;
 
     &--hidden {
         display: none;
+    }
+
+    &--size {
+        width: 300px;
+
+        @media (min-width: 768px) {
+            width: 464px;
+        }    
+    }
+
+    &--box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); 
+        z-index: 5; 
+    
+        &--hidden {
+            display: none;
+        }
     }
 
     &__container {
@@ -19,17 +49,12 @@
         @include clear-button;
         
 
-        background-image: url('../img/cloused.svg');
-        background-repeat: no-repeat;
         position: absolute;
         top: 0;
         right: 0;
         padding-left: 370px;
         padding-top: 20px;
-        
-        img {
-            width: 20px;
-        }
+   
     }
     
     &__title {
@@ -42,6 +67,40 @@
         margin-top: -2px; 
         
     }
+
+    &--red {
+        color: red;
+    }
+
+    
+    &__description {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 12px;
+
+        @media (min-width: 1728px) {
+            font-size: 20px;
+        }
+    }
+
+    &__continue {
+        width: 254px;
+        font-size: 16px;
+        line-height: 24px;
+        font-weight: 600;
+        padding: 12px 30px;
+        color: white;
+        background-color: black;
+        box-shadow: -2px 12px 85px 0 rgb(0 0 0 / .2);
+
+        @media (min-width: 768px) {
+            width: 312px;
+            font-size: 24px;
+            line-height: 36px;
+            padding: 13px 20px;
+        }
+    }
+
 
     &__button {
         @include clear-button;

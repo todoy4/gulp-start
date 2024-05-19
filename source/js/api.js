@@ -3,3 +3,5 @@ export const getData = async (url) => {
     const commit = await response.json();
     return commit;
 }
+
+

@@ -59,7 +59,7 @@
           </button>
 
           <button class="header__button-closed  header__button-closed--hidden header__button">
-            <img src="img/cloused.svg" alt="closed icon">
+            <img src="img/closed.svg" alt="closed icon">
           </button>
         </div>
       </div>
@@ -238,21 +238,9 @@
         </div>
       </section>
 
-
-     <div class="overlay overlay--hidden"></div>
-
-
       <section class="catalog">
 
         <div class="catalog__container container">
-
-          <div class="catalog__modal-add modal modal--hidden" id="catalog-modal">
-            <div class="modal__container container">
-              <button type="button" class="modal__close"></button>
-              <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
-              <button type="button" class="modal__button modal__resume">Продолжить Покупки</button>
-            </div>  
-          </div>
 
           <h2 class="catalog__title heading-style">Best Selling</h2>
 
@@ -323,7 +311,7 @@
           <div class="footer__manner-add manner manner--hidden">
             <div class="manner__container container">
               <button type="button" class="manner__close-button">
-                <img class="" src="img/cloused.svg" alt="cloused icon">
+                <img class="" src="img/closed.svg" alt="closed icon">
               </button>
               <h3 class="manner__title">Проверьте ваш email <br> и подтвердите подписку</h3>
             </div>  
@@ -368,16 +356,31 @@
     </main>
     <script src="js/main.js" defer type="module"></script>
     <script src="js/menu.js" defer></script>
+  </body>
 
+  <div class="overlay overlay--hidden"></div>
+  
+  <div id="catalog-modal" class="modal modal--hidden modal--size">
+    <div class="modal__container container">
+      <button type="button" class="modal__close">
+        <img class="" src="img/closed.svg" alt="close icon">
+      </button>
+      <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
+      <button type="button" class="modal__button modal__resume">Продолжить Покупки</button>
+    </div>  
+  </div>
 
+  
   <div id="modal_cart_error" class="modal modal--hidden modal--size">
-    <button type="button" class="modal__close"><img src="img/cloused.svg" alt="icon of close button"></button>
-    <span class="modal__text modal__text--red">Ошибка!</span>
+    <button type="button" class="modal__close">
+      <img class="" src="img/closed.svg" alt="close icon">
+    </button>
+    <span class="modal__title modal__title--red">Ошибка!</span>
     <p class="modal__description">Что-то пошло не так. Мы уже знаем о проблеме. Зайдите позже.</p>
     <button class="modal__continue">Продолжить покупки</button>
   </div>
 
-  <div class="shopping-cart modal modal--hidden ">
+  <div class="shopping-cart modal modal--hidden">
     <template id="shopping-cart-product">
       <li class="shopping-cart__item">
         <a href="#" class="shopping-cart__link">
@@ -392,7 +395,9 @@
         <span class="shopping-cart__price">3999 ₽</span>
       </li>
     </template>
-    <button type="button" class="shopping-cart__close"></button>
+    <button type="button" class="modal__close">
+      <img class="" src="img/closed.svg" alt="close icon">
+    </button>
     <span class="shopping-cart__title">Корзина товаров</span>
     <ul class="shopping-cart__list"></ul>
     <div class="shopping-cart__amount-product">
@@ -404,7 +409,6 @@
       <a href="#">Оформить заказ</a>
     </div>
   </div>
-  </body>
 </html>
 
 
