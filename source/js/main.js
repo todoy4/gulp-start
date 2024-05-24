@@ -1,6 +1,7 @@
 import { getData } from "./api.js";
 import renderProducts from "./renderProducts.js";
 import './productCart.js';
+import './menu.js';
 
 
 const catalogList = document.querySelector('.catalog__product-wrapper');

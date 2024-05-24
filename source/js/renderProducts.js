@@ -4,7 +4,7 @@ import { addToStorage } from './storageLocal.js';
 
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
-    
+
     const fragment = document.createDocumentFragment();
 
     const modalCart = document.querySelector('#catalog-modal');
@@ -31,11 +31,12 @@ products.forEach(product => {
     const priceEl = itemEl.querySelector('.product__price-new');
     const oldPriceEl = itemEl.querySelector('.product__price-old');
     const buttonEl = itemEl.querySelector('.product__button');
-    
+
 
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
-    
+
     buttonEl.addEventListener('click', (event) => {
+        addToStorage(product, 'cart');
         openModal(modalCart, event);
         addProductToCart(
             {
@@ -46,17 +47,16 @@ products.forEach(product => {
             },
             true
         );
-        addToStorage(product, 'cart');
     });
 
-    
+
 
     itemEl.dataset.productId = id;
     imageEl.src = img;
     nameEl.textContent = name;
     priceEl.textContent = `${price} ₽`;
     oldPriceEl.textContent = `${oldPrice} ₽`;
-    
+
     if(big) {
         productItem.classList.add('product--big');
         itemEl.classList.add('catalog__product--g-1-3');
@@ -75,4 +75,3 @@ products.forEach(product => {
 }
 
 
-    

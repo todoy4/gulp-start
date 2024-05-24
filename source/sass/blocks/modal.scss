@@ -22,7 +22,7 @@
 
         @media (min-width: 768px) {
             width: 464px;
-        }    
+        }
     }
 
     &--box{
@@ -31,9 +31,9 @@
         left: 0;
         width: 100%;
         height: 100%;
-        background: rgba(0, 0, 0, 0.5); 
-        z-index: 5; 
-    
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+
         &--hidden {
             display: none;
         }
@@ -47,16 +47,17 @@
 
     &__close {
         @include clear-button;
-        
 
+        background: url(../img/closed.svg) no-repeat center;
+        background-size: 100% auto;
+        width: 20px;
+        height: 20px;
         position: absolute;
-        top: 0;
-        right: 0;
-        padding-left: 370px;
-        padding-top: 20px;
-   
+        top: 10px;
+        right: 10px;
+
     }
-    
+
     &__title {
 
         text-align: center;
@@ -64,15 +65,15 @@
         font-weight: 500;
         font-size: 32px;
         line-height: 39px;
-        margin-top: -2px; 
-        
+        margin-top: -2px;
+
     }
 
     &--red {
         color: red;
     }
 
-    
+
     &__description {
         margin-top: 0;
         margin-bottom: 20px;
@@ -85,33 +86,14 @@
 
     &__continue {
         width: 254px;
-        font-size: 16px;
-        line-height: 24px;
-        font-weight: 600;
-        padding: 12px 30px;
-        color: white;
-        background-color: black;
-        box-shadow: -2px 12px 85px 0 rgb(0 0 0 / .2);
 
         @media (min-width: 768px) {
             width: 312px;
-            font-size: 24px;
-            line-height: 36px;
-            padding: 13px 20px;
         }
     }
 
 
     &__button {
-        @include clear-button;
-
-        background-color: #000;
-        color: #fff;
-        width: 333px;
-        height: 74px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 37px;
+      width: 333px;
     }
 }
