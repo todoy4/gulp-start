@@ -1,4 +1,4 @@
-import {getStorage, removeFromStorage} from './storageLocal'
+import {getStorage, addToStorage, removeFromStorage} from './storageLocal'
 
 const editPructCount = (clone, product, operation = 'plus') => {
     const input = clone.querySelector('.shopping-cart__count').value;
