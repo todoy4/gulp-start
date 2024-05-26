@@ -197,7 +197,7 @@
     }
 
     .header__button {
-    z-index: 5;
+    
         &--hidden {
             @media (min-width: 768px) {
                 display: none;
