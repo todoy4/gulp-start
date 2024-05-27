@@ -1,4 +1,4 @@
-import { addToProduct} from './productCart.js';
+import { renderCart } from './productCart.js';
 import { openModal } from './modal.js';
 import { addToStorage } from './storageLocal.js';
 
@@ -38,16 +38,9 @@ products.forEach(product => {
     buttonEl.addEventListener('click', (event) => {
         addToStorage(product, 'cart');
         openModal(modalCart, event);
-        addToProduct(
-            {
-                id: product.id,
-                name: product.name,
-                image: product.image,
-                price: product.price,
-            },
-            true
-        );
+        renderCart();
     });
+
 
 
 

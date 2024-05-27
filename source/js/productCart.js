@@ -1,9 +1,27 @@
-import {getStorage, addToStorage, removeFromStorage} from './storageLocal'
+import {getStorage, addToStorage, removeFromStorage} from './storageLocal.js'
+import { openModal } from './modal.js';
+
+
+
+const modalCart = document.querySelector('#catalog-modal');
+const blockMenu = document.querySelector('.header__button-shop');
+const cart = document.querySelector('.shopping-cart');
+const cartList = cart.querySelector('.shopping-cart__list');
+const cartOpenedButton = blockMenu.querySelector('.header__button-link');
+const cartCount = blockMenu.querySelector('.header__item-counter');
+const costOfProduct = cart.querySelector('.shopping-cart__cost');
+const countOfProduct = cart.querySelector('.shopping-cart__amount');
+const cartProductTemplate = document.querySelector('#shopping-cart-product').content;
+
+cartOpenedButton.addEventListener('click', (event) => {
+    openModal(cart, event);
+})
+
 
 const editPructCount = (clone, product, operation = 'plus') => {
     const input = clone.querySelector('.shopping-cart__count').value;
-    const totalEl = document.querySelector('.shopping-cart__total span');
-    const totalPriceEl = document.querySelector('.shopping-cart__total-price span');
+    const totalEl = document.querySelector('.shopping-cart__amount span');
+    const totalPriceEl = document.querySelector('.shopping-cart__cost');
 
     const totalPrice = Number(totalPriceEl.textContent.replace(/\D/g, '')) - Number(product.price);
 
@@ -52,7 +70,7 @@ export const renderCart = () => {
         clone.querySelector('.shopping-cart__count').value = countsData[product.id];
         clone.querySelector('.shopping-cart__image').src = product.image;
         clone.querySelector('.shopping-cart__name').textContent = product.name;
-        clone.querySelector('.shopping-сart__price').textContent = product.price;
+        clone.querySelector('.shopping-cart__price').textContent = product.price;
 
         clone.querySelector('.shopping-cart__minus').addEventListener('click', () => {
             removeFromStorage('cart', product.id);
@@ -71,12 +89,13 @@ export const renderCart = () => {
 
     targetEl.append(fragment);
 
-    const totalEl = document.querySelector('.shopping-cart__total span');
+    const totalEl = document.querySelector('.shopping-cart__amount');
     totalEl.textContent = data.length
 
-    const totalPriceEl = document.querySelector('.shopping-cart__total-price span');
+    const totalPriceEl = document.querySelector('.shopping-cart__cost');
     totalPriceEl.textContent = data.reduce((acc, curr) => acc + Number(curr.price), 0)
 }
+
 
 renderCart();
 
@@ -140,17 +159,6 @@ renderCart();
 
 
 // import { removeFromStorage, getStorage } from './storageLocal.js';
-// import { openModal } from './modal.js';
-
-// const modalCart = document.querySelector('#catalog-modal');
-// const blockMenu = document.querySelector('.header__button-shop');
-// const cart = document.querySelector('.shopping-cart');
-// const cartList = cart.querySelector('.shopping-cart__list');
-// const cartOpenedButton = blockMenu.querySelector('.header__button-link');
-// const cartCount = blockMenu.querySelector('.header__item-counter');
-// const costOfProduct = cart.querySelector('.shopping-cart__cost');
-// const countOfProduct = cart.querySelector('.shopping-cart__amount');
-// const cartProductTemplate = document.querySelector('#shopping-cart-product').content;
 
 
 // const removeProductFromCart = (productId) => {
@@ -188,9 +196,6 @@ renderCart();
 // };
 
 
-// cartOpenedButton.addEventListener('click', (event) => {
-//     openModal(cart, event);
-// })
 
 
 // if(getStorage('cart')?.length) {
