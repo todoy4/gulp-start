@@ -2,7 +2,7 @@ export const getStorage = (storageName) => {
     return JSON.parse(localStorage.getItem(storageName));
 };
 
-export const addToStorage = (data, storageName) => {
+export const addToStorage = (storageName, data) => {
     let storageArr = [data];
     const storageData = JSON.parse(localStorage.getItem(storageName));
 
@@ -12,7 +12,7 @@ export const addToStorage = (data, storageName) => {
     localStorage.setItem(storageName, JSON.stringify(storageArr));
 };
 
-export const removeFromStorage = (id, storageName) => {
+export const removeFromStorage = (storageName, id) => {
     const storageData = JSON.parse(localStorage.getItem(storageName));
 
     if(!storageData) {

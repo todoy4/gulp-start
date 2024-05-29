@@ -1,39 +1,44 @@
-import {getStorage, addToStorage, removeFromStorage} from './storageLocal.js'
+import { getStorage, addToStorage, removeFromStorage } from './storageLocal.js'
 import { openModal } from './modal.js';
+import formatPrice from './formatPrice.js';
 
 
 
-const modalCart = document.querySelector('#catalog-modal');
 const blockMenu = document.querySelector('.header__button-shop');
 const cart = document.querySelector('.shopping-cart');
-const cartList = cart.querySelector('.shopping-cart__list');
 const cartOpenedButton = blockMenu.querySelector('.header__button-link');
-const cartCount = blockMenu.querySelector('.header__item-counter');
-const costOfProduct = cart.querySelector('.shopping-cart__cost');
-const countOfProduct = cart.querySelector('.shopping-cart__amount');
-const cartProductTemplate = document.querySelector('#shopping-cart-product').content;
+const cartCount = document.querySelector('.header__item-counter');
 
 cartOpenedButton.addEventListener('click', (event) => {
     openModal(cart, event);
 })
-
+ 
 
 const editPructCount = (clone, product, operation = 'plus') => {
     const input = clone.querySelector('.shopping-cart__count').value;
     const totalEl = document.querySelector('.shopping-cart__amount span');
     const totalPriceEl = document.querySelector('.shopping-cart__cost');
-
+    const data = getStorage('cart');
+    
     const totalPrice = Number(totalPriceEl.textContent.replace(/\D/g, '')) - Number(product.price);
-
+    
     if(operation === 'plus') {
-        totalPriceEl.textContent = totalPrice + Number(product.price);
+        totalPriceEl.textContent = formatPrice(totalPrice + Number(product.price));
         clone.querySelector('.shopping-cart__count').value = Number(input) + 1;
+        cartCount.textContent = Number(cartCount.textContent) + 1;
         totalEl.textContent = Number(totalEl.textContent) + 1;
     }else{
         totalPriceEl.textContent = totalPrice - Number(product.price);
         clone.querySelector('.shopping-cart__count').value = Number(input) - 1;
+        cartCount.textContent = Number(cartCount.textContent) - 1;
         totalEl.textContent = Number(totalEl.textContent) - 1;
     }
+    
+    // if(!data?.length) {
+    //     return;
+    // }
+
+    totalPriceEl.textContent = formatPrice(data.reduce((acc, curr) => acc + Number(curr.price), 0));
 }
 
 export const renderCart = () => {
@@ -74,8 +79,13 @@ export const renderCart = () => {
 
         clone.querySelector('.shopping-cart__minus').addEventListener('click', () => {
             removeFromStorage('cart', product.id);
-                      
-            editPructCount(clone, product, 'minus');
+            if(clone.querySelector('.shopping-cart__count').value <= 0) {
+                clone.querySelector('.shopping-cart__count').value = 0;
+            }else{
+                editPructCount(clone, product, 'minus');
+
+            }
+            
         })
 
         clone.querySelector('.shopping-cart__plus').addEventListener('click', () => {
@@ -89,11 +99,14 @@ export const renderCart = () => {
 
     targetEl.append(fragment);
 
-    const totalEl = document.querySelector('.shopping-cart__amount');
+    cartCount.textContent = data.length;
+    
+    const totalEl = document.querySelector('.shopping-cart__amount span');
     totalEl.textContent = data.length
 
     const totalPriceEl = document.querySelector('.shopping-cart__cost');
-    totalPriceEl.textContent = data.reduce((acc, curr) => acc + Number(curr.price), 0)
+    totalPriceEl.textContent = formatPrice(data.reduce((acc, curr) => acc + Number(curr.price), 0));
+
 }
 
 

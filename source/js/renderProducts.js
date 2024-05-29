@@ -36,7 +36,7 @@ products.forEach(product => {
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
 
     buttonEl.addEventListener('click', (event) => {
-        addToStorage(product, 'cart');
+        addToStorage('cart', product);
         openModal(modalCart, event);
         renderCart();
     });
