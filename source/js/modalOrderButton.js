@@ -20,7 +20,7 @@ orderButton.addEventListener('click', (event) => {
 })
 
 const modalSuccess = document.getElementById('modal_cart_success');
-const buttonModalCall = document.querySelector('.button-style--blue');
+const buttonModalCall = document.querySelector('.button--blue');
 
 buttonModalCall.addEventListener('click', (event) => {
     modalCall.classList.add('modal--hidden');
