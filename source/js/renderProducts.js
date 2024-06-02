@@ -1,6 +1,13 @@
+import { renderCart } from './productCart.js';
+import { openModal } from './modal.js';
+import { addToStorage } from './storageLocal.js';
+
+
 export default (products, template, target, isTargetList = false, templateClass = '') => {
-    
+
     const fragment = document.createDocumentFragment();
+
+    const modalCart = document.querySelector('#catalog-modal');
 
     let productEl = template.querySelector('.catalog__product');
 
@@ -25,14 +32,24 @@ products.forEach(product => {
     const oldPriceEl = itemEl.querySelector('.product__price-old');
     const buttonEl = itemEl.querySelector('.product__button');
 
+
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
-       
+
+    buttonEl.addEventListener('click', (event) => {
+        addToStorage('cart', product);
+        openModal(modalCart, event);
+        renderCart();
+    });
+
+
+
+
     itemEl.dataset.productId = id;
     imageEl.src = img;
     nameEl.textContent = name;
     priceEl.textContent = `${price} ₽`;
     oldPriceEl.textContent = `${oldPrice} ₽`;
-    
+
     if(big) {
         productItem.classList.add('product--big');
         itemEl.classList.add('catalog__product--g-1-3');
@@ -50,4 +67,4 @@ products.forEach(product => {
     target.appendChild(fragment);
 }
 
-    
+

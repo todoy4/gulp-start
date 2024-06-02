@@ -1,9 +1,12 @@
 .header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    background-color: #fff;
 
 
     @media (min-width: 1728px) {
-        position: absolute;
-        z-index: 5;
         width: 100%;
     }
 
@@ -176,7 +179,7 @@
             position: relative;
         }
     }
-
+    
     &__button-open {
         @media (min-width: 768px) {
             display: none;
@@ -194,7 +197,7 @@
     }
 
     .header__button {
-
+    
         &--hidden {
             @media (min-width: 768px) {
                 display: none;

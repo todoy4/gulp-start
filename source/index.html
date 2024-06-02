@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ваш проект</title>
     <link rel="stylesheet" href="css/style.min.css">
-    
+
   </head>
   <body>
     <header class="header">
@@ -43,27 +43,30 @@
 
         <div class="header__user-action">
 
-          <button class="header__button ">
+          <button class="header__button">
             <img src="img/search.svg" alt="search icon">
           </button>
 
-          <button class="header__button ">
-            <img src="img/shop.svg" alt="shopping cart icon">
-            <span class="header__item-counter">0</span>
-          </button>
+          <div class="header__button-shop">
+            <a class="header__button-link" href="#">
+              <img src="img/shop.svg">
+              <span class="header__item-counter">0</span>
+            </a>
+          </div>
 
           <button class="header__button-open header__button">
             <img src="img/menu.svg" alt="menu icon">
           </button>
+
           <button class="header__button-closed  header__button-closed--hidden header__button">
-            <img src="img/cloused.svg" alt="closed icon">
+            <img src="img/closed.svg" alt="closed icon">
           </button>
         </div>
       </div>
     </header>
 
-  
-    
+
+
     <main class="hero">
       <div class="hero__container container">
         <div class="hero__headline-block">
@@ -78,7 +81,7 @@
               Чтоб купили прям вообще всё
             </p>
           </div>
-          <button class="hero__button button-style">За покупками</button>
+          <button class="hero__button button">За покупками</button>
         </div>
 
         <div class="hero__product">
@@ -106,7 +109,7 @@
             </li>
             <li class="marketplace__item">
               <img  class="marketplace__image" src="img/yandexMarket.png" alt="marketplace icon">
-            </li> 
+            </li>
           </ul>
 
           <ul class="marketplace__list-scroll">
@@ -122,7 +125,7 @@
             </li>
             <li class="marketplace__item">
               <img  class="marketplace__image" src="img/yandexMarket.png" alt="marketplace icon">
-            </li> 
+            </li>
           </ul>
         </div>
       </section>
@@ -179,7 +182,7 @@
                 <button type="button" class="slider-pagination__item slider-pagination__item--big slider-pagination__item--bg-black slider-pagination__item--half-round"></button>
                 <button type="button" class="slider-pagination__item slider-pagination__item--small slider-pagination__item--bg-black slider-pagination__item--round"></button>
               </div>
-              
+
           </div>
 
           <button class="popular-block__show-all-mobile">Показать все</button>
@@ -193,7 +196,7 @@
           <div class="slide-banner__wrapper">
             <ul class="slide-banner__list banner">
               <li class="banner__item  banner__item--border-round banner__item--bg-color banner__item--bg-slick">
-                
+
                 <div class="banner__content-wrapper">
                   <h3 class="banner__title banner__title--text-size banner__title--text-white">
                     Ты готов<br>
@@ -216,7 +219,7 @@
 
                   </ul>
                 </div>
-                
+
               </li>
             </ul>
 
@@ -230,28 +233,14 @@
               <div class="slider-indicator__item slider-indicator__item--big slider-indicator__item--bg-white slider-indicator__item--half-round"></div>
               <div class="slider-indicator__item slider-indicator__item--small slider-indicator__item--bg-white slider-indicator__item--round"></div>
             </div>
-            
+
           </div>
         </div>
       </section>
 
-
-     <div class="overlay overlay--hidden"></div>
-
-
       <section class="catalog">
 
         <div class="catalog__container container">
-
-          <div class="catalog__modal-add modal modal--hidden">
-            <div class="modal__container container">
-              <button type="button" class="modal__close-button">
-                <img class="" src="img/cloused.svg" alt="cloused icon">
-              </button>
-              <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
-              <button type="button" class="modal__button modal__resume">Продолжить Покупки</button>
-            </div>  
-          </div>
 
           <h2 class="catalog__title heading-style">Best Selling</h2>
 
@@ -262,7 +251,7 @@
 
           <template id="product">
 
-  
+
               <div class="catalog__product">
                 <div class="product product--border-radius">
                   <img class="product__image" src="img/slick_formal_sneaker.png" alt="sneaker image 1">
@@ -279,9 +268,9 @@
           </template>
 
           <div class="catalog__product-wrapper">
-            <button class="catalog__show-all button-style">Показать все</button>
+            <button class="catalog__show-all button">Показать все</button>
           </div>
-              
+
       </section>
 
       <section class="reviews">
@@ -311,7 +300,7 @@
                  adipiscing elit, sed do eiusmod tempor<br>
                   incididunt ut labore et dolore magna aliqua.</p>
             </li>
-            
+
           </ul>
         </div>
       </section>
@@ -322,12 +311,12 @@
           <div class="footer__manner-add manner manner--hidden">
             <div class="manner__container container">
               <button type="button" class="manner__close-button">
-                <img class="" src="img/cloused.svg" alt="cloused icon">
+                <img class="" src="img/closed.svg" alt="closed icon">
               </button>
               <h3 class="manner__title">Проверьте ваш email <br> и подтвердите подписку</h3>
-            </div>  
+            </div>
           </div>
-           
+
           <div class="footer__wrapper">
 
           <div class="footer__content-wrapper">
@@ -365,8 +354,75 @@
       </footer>
 
     </main>
+
+    <div class="overlay overlay--hidden"></div>
+
+    <div id="catalog-modal" class="modal modal--hidden modal--size">
+      <div class="modal__container container">
+        <button type="button" class="modal__close"></button>
+        <h3 class="modal__title">Товар упешно <br> добавлен в корзину</h3>
+        <button type="button" class="button modal__resume modal__button">Продолжить Покупки</button>
+      </div>
+    </div>
+
+    <div id="modal-call" class="modal modal--hidden modal--size-big">
+      <button type="button" class="modal__close"></button>
+      <p class="modal__title modal__title--start">Для Оформления Заказа<br>
+        Укажите Ваш Номер Телефона:
+      </p>
+      <div class="modal__action">
+        <input class="modal__input" placeholder="Номер Телефона" type="text"/>
+        <button class="button button--blue">Отправить</button>
+      </div>
+      <label class="modal__label">
+        <input class="modal__checkbox" type="checkbox">
+        <span class="modal__checkbox-castom"></span>
+          Согласен с политикой конфиденциальности
+      </label>
+    </div>
+
+    <div id="modal_cart_error" class="modal modal--hidden modal--size">
+      <button type="button" class="modal__close"></button>
+      <span class="modal__title modal__title--red">Ошибка!</span>
+      <p class="modal__description">Что-то пошло не так. Мы уже знаем о проблеме. Зайдите позже.</p>
+      <button class="button modal__continue modal__resume">Продолжить покупки</button>
+    </div>
+
+    <div id="modal_cart_success" class="modal modal--hidden modal--size">
+      <button class="modal__close"></button>
+      <p class="modal__title">Заказ оформлен.<br>
+        Ожидайте звонка</p>
+      <button class="modal-button button">Вернуться На Главную</button>
+    </div>
+
+
+    <div class="shopping-cart modal modal--hidden">
+      <template id="shopping-cart-product">
+        <li class="shopping-cart__item">
+          <a href="#" class="shopping-cart__link">
+            <img class="shopping-cart__image" src="img/black_test.png" alt="первый товар">
+          </a>
+          <p class="shopping-cart__name">Running sport shoe</p>
+          <div class="shopping-cart__plusminus-button">
+            <button class="shopping-cart__minus" type="button">-</button>
+            <input class="shopping-cart__count" type="text" placeholder="0">
+            <button class="shopping-cart__plus" type="button">+</button>
+          </div>
+          <span class="shopping-cart__price">3999 ₽</span>
+        </li>
+      </template>
+      <button type="button" class="modal__close"></button>
+      <span class="shopping-cart__title">Корзина товаров</span>
+      <ul class="shopping-cart__list"></ul>
+      <div class="shopping-cart__amount-product">
+        <span class="shopping-cart__total">Итого</span>
+        <span class="shopping-cart__amount"><span>0</span>шт.</span>
+        <span class="shopping-cart__cost">0₽</span>
+      </div>
+      <button class="shopping-cart__order-button button--red" id="order-button">Оформить заказ</button>
+    </div>
+
     <script src="js/main.js" defer type="module"></script>
-    <script src="js/menu.js" defer></script>
   </body>
 </html>
 

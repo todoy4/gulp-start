@@ -1,11 +1,44 @@
 .modal {
-    background-color: #ffffff;
-    width: 504px;
-    height: 258px;
-    border-radius: 15px;
+    padding: 20px 23px;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: -1px 3px 17px 3px rgb(0 0 0 / 20%);
+    text-align: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 110;
 
     &--hidden {
         display: none;
+    }
+
+    &--size {
+        width: 300px;
+
+        @media (min-width: 768px) {
+            width: 464px;
+        }
+    }
+
+    &--size-big {
+        width: 614px;
+    }
+
+    &--box{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 5;
+
+        &--hidden {
+            display: none;
+        }
     }
 
     &__container {
@@ -14,38 +47,123 @@
         align-items: center;
     }
 
-    &__close-button {
+    &__close {
         @include clear-button;
-        
-        padding-left: 370px;
-        padding-top: 20px;
-        
-        img {
-            width: 20px;
-        }
+
+        background: url(../img/closed.svg) no-repeat center;
+        background-size: 100% auto;
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
     }
-    
+
     &__title {
 
         text-align: center;
         color: #000;
         font-weight: 500;
-        font-size: 32px;
+        font-size: 25px;
         line-height: 39px;
-        margin-top: -2px; 
+        margin-top: -2px;
         
+        &--red {
+            color: red;
+        }
+    
+        &--start {
+            padding-left: 5px;
+            text-align: start;
+        }
     }
 
-    &__button {
-        @include clear-button;
 
-        background-color: #000;
-        color: #fff;
-        width: 333px;
-        height: 74px;
-        text-align: center;
-        font-weight: 600;
-        font-size: 24px;
-        line-height: 37px;
+
+    &__description {
+        margin-top: 0;
+        margin-bottom: 20px;
+        font-size: 12px;
+
+        @media (min-width: 1728px) {
+            font-size: 20px;
+        }
+    }
+
+    &__continue {
+        width: 254px;
+
+        @media (min-width: 768px) {
+            width: 312px;
+        }
+    }
+
+
+    &__button {
+      width: 333px;
+    }
+
+    &__input {
+      width: 294px;
+      height: 47px;
+      padding-left: 20px;
+    }
+    
+    &__action {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__label {
+        display: flex;
+        flex-wrap: nowrap;
+        margin: 25px 15px;
+    }
+
+    &__checkbox {
+        width: 0;
+        height: 0;
+        opacity: 0;
+        position: absolute;
+        z-index: -1;
+    }
+
+    &__checkbox-castom {
+        position: relative;
+        border: 2px solid #DEDEDE;
+        border-radius: 4px;
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        background-color: #fff;
+        vertical-align: sub;
+        margin-right: 5px;
+    }
+
+    .modal__checkbox-castom::before {
+        content: '';
+        display: inline-block;
+        width: 9px;
+        height: 9px;
+        background-image: url("../img/jackdaw.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%)(scale(0));
+        margin-top: 1px;
+
+        transition: 0.2s ease-in;
+
+    }
+
+    .modal__checkbox:focus + .modal__checkbox-castom {
+        box-shadow: 0px 0px 0px 1px #38577a, 0px 0px 10px #7e9bbd;
+    }
+
+    .modal__checkbox:checked + .modal__checkbox-castom::before {
+        transform: translate(-50%, -50%)(scale(1));
     }
 }
