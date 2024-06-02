@@ -1,8 +1,7 @@
 import { getStorage, addToStorage, removeFromStorage } from './storageLocal.js'
 import { openModal } from './modal.js';
 import formatPrice from './formatPrice.js';
-
-
+import './modalOrderButton.js'
 
 const blockMenu = document.querySelector('.header__button-shop');
 const cart = document.querySelector('.shopping-cart');
@@ -15,12 +14,11 @@ cartOpenedButton.addEventListener('click', (event) => {
  
 
 const editPructCount = (clone, product, operation = 'plus') => {
-    const input = clone.querySelector('.shopping-cart__count').value;
+    const input = clone.querySelector('.shopping-cart__count').value; 
     const totalEl = document.querySelector('.shopping-cart__amount span');
     const totalPriceEl = document.querySelector('.shopping-cart__cost');
-    const data = getStorage('cart');
     
-    const totalPrice = Number(totalPriceEl.textContent.replace(/\D/g, '')) - Number(product.price);
+    const totalPrice = Number(totalPriceEl.textContent.replace(/\D/g, ''));
     
     if(operation === 'plus') {
         totalPriceEl.textContent = formatPrice(totalPrice + Number(product.price));
@@ -28,17 +26,11 @@ const editPructCount = (clone, product, operation = 'plus') => {
         cartCount.textContent = Number(cartCount.textContent) + 1;
         totalEl.textContent = Number(totalEl.textContent) + 1;
     }else{
-        totalPriceEl.textContent = totalPrice - Number(product.price);
+        totalPriceEl.textContent = formatPrice(totalPrice - Number(product.price));
         clone.querySelector('.shopping-cart__count').value = Number(input) - 1;
         cartCount.textContent = Number(cartCount.textContent) - 1;
         totalEl.textContent = Number(totalEl.textContent) - 1;
     }
-    
-    // if(!data?.length) {
-    //     return;
-    // }
-
-    totalPriceEl.textContent = formatPrice(data.reduce((acc, curr) => acc + Number(curr.price), 0));
 }
 
 export const renderCart = () => {
@@ -78,19 +70,18 @@ export const renderCart = () => {
         clone.querySelector('.shopping-cart__price').textContent = product.price;
 
         clone.querySelector('.shopping-cart__minus').addEventListener('click', () => {
-            removeFromStorage('cart', product.id);
             if(clone.querySelector('.shopping-cart__count').value <= 0) {
                 clone.querySelector('.shopping-cart__count').value = 0;
             }else{
                 editPructCount(clone, product, 'minus');
-
+                removeFromStorage('cart', product.id);
             }
             
         })
 
         clone.querySelector('.shopping-cart__plus').addEventListener('click', () => {
             addToStorage('cart', product);
-
+            
             editPructCount(clone, product, 'plus');
         })
 
@@ -109,113 +100,4 @@ export const renderCart = () => {
 
 }
 
-
 renderCart();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import { removeFromStorage, getStorage } from './storageLocal.js';
-
-
-// const removeProductFromCart = (productId) => {
-//     const node = cartList.querySelector(`[data-product-id="${productId}"]`);
-//     node.remove();
-//     cartCount.textContent = cartList.childElementCount;
-
-//     if(!cartList.childElementCount) {
-//         cart.classList.remove('user-menu__cart_active');
-//     }
-//     removeFromStorage(productId, 'cart');
-// };
-
-// const addProductToCart = (product) => {
-
-//     const node = cartProductTemplate.querySelector('.shopping-cart__item').cloneNode(true);
-
-//     node.dataset.productId = product.id;
-//     node.querySelector('.shopping-cart__image').src = product.image;
-//     node.querySelector('.shopping-cart__name').textContent = product.name;
-//     node.querySelector('.shopping-cart__price').textContent = `${product.price} ₽`;
-
-//     cartList.append(node);
-//     cartCount.textContent = cartList.childElementCount;
-//     countOfProduct.textContent = `${cartList.childElementCount} шт.`
-//     costOfProduct.textContent = costOfCart();
-// };
-
-// const costOfCart = () => {
-//     return getStorage('cart')
-//         ?.map(el => Number(el.price))
-//         .reduce((a,b) => {return a+b}
-//         ,0
-//     );
-// };
-
-
-
-
-// if(getStorage('cart')?.length) {
-//     getStorage('cart').forEach(product => {
-//         addProductToCart(product);
-//     });
-//     cartCount.textContent = cartList.childElementCount;
-// }
-
-// export { removeProductFromCart, addProductToCart };

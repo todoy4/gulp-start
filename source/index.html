@@ -365,6 +365,21 @@
       </div>
     </div>
 
+    <div id="modal-call" class="modal modal--hidden modal--size-big">
+      <button type="button" class="modal__close"></button>
+      <p class="modal__title modal__title--start">Для Оформления Заказа<br>
+        Укажите Ваш Номер Телефона:
+      </p>
+      <div class="modal__action">
+        <input class="modal__input" placeholder="Номер Телефона" type="text"/>
+        <button class="button-style button-style--blue">Отправить</button>
+      </div>
+      <label class="modal__label">
+        <input class="modal__checkbox" type="checkbox">
+        <span class="modal__checkbox-castom"></span>
+          Согласен с политикой конфиденциальности
+      </label>
+    </div>
 
     <div id="modal_cart_error" class="modal modal--hidden modal--size">
       <button type="button" class="modal__close"></button>
@@ -372,6 +387,14 @@
       <p class="modal__description">Что-то пошло не так. Мы уже знаем о проблеме. Зайдите позже.</p>
       <button class="button modal__continue modal__resume">Продолжить покупки</button>
     </div>
+
+    <div id="modal_cart_success" class="modal modal--hidden modal--size">
+      <button class="modal__close"></button>
+      <p class="modal__title">Заказ оформлен.<br>
+        Ожидайте звонка</p>
+      <button class="modal-button button-style">Вернуться На Главную</button>
+    </div>
+
 
     <div class="shopping-cart modal modal--hidden">
       <template id="shopping-cart-product">
@@ -396,9 +419,7 @@
         <span class="shopping-cart__amount"><span>0</span>шт.</span>
         <span class="shopping-cart__cost">0₽</span>
       </div>
-      <div class="shopping-cart__order-button">
-        <a href="#">Оформить заказ</a>
-      </div>
+      <button class="shopping-cart__order-button button-style--red" id="order-button">Оформить заказ</button>
     </div>
 
     <script src="js/main.js" defer type="module"></script>

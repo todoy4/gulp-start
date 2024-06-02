@@ -1,6 +1,6 @@
 const overlay = document.querySelector('.overlay');
 
-const closeModal = (event) => {
+export const closeModal = (event) => {
     const modals = document.querySelectorAll('.modal');
 
     modals.forEach(modal => {
