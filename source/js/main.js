@@ -1,5 +1,6 @@
 import { getData } from "./api.js";
 import renderProducts from "./renderProducts.js";
+import './slider.js';
 import './productCart.js';
 import './menu.js';
 
