@@ -21,11 +21,10 @@ const swiper = new Swiper('.banners__swiper', {
   },
 });
 
-const newSwiper = new Swiper('.popular-block', {
+const newSwiper = new Swiper('.popular-block__slider-wrapper', {
   loop: true,
   spaceBeetween: 30,
   skidersPerView: 1,
-  wrapperClass: 'popular-block__product-wrapper',
 
   breakpoints: {
     1728: {
@@ -37,7 +36,7 @@ const newSwiper = new Swiper('.popular-block', {
 
   // If we need pagination
   pagination: {
-    el: '.banners__pagination',
+    el: '.slider-pagination',
     bulletActiveClass: 'slider-pagination__button--big',
     bulletClass: 'slider-pagination__button',
   },

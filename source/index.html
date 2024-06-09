@@ -132,7 +132,7 @@
 
       <section class="popular-block">
         <div class="popular-block__container container">
-
+          
           <div class="popular-block__title-block">
             <span class="popular-block__subtitle">Сегодня В Тренде</span>
             <h3 class="popular-block__title"> Самые популярные</h3>
@@ -140,15 +140,11 @@
             <button class="popular-block__show-all">Показать все</button>
           </div>
           
-          <div class="popular-block__button">
-            <button class="popular-block__arrow popular-block__arrow--left"><img src="img/slide-left.svg" alt="#"></button>
-            <button class="popular-block__arrow popular-block__arrow--right"><img src="img/slide-right.svg" alt="#"></button>
-          </div>
-
+          
           <div class="popular-block__slider">
-              <div class="popular-block__product-wrapper">
+              <div class="popular-block__slider-wrapper">
                 <ul class="popular-block__list swiper-wrapper">
-
+                  
                   <li class="product product--border-radius swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/black__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
@@ -176,7 +172,7 @@
                     </div>
                   </li>
 
-                  <li class="product product--border-radius product--hidden-slide swiper-slide">
+                  <li class="product product--border-radius product--hidden-slide  swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/pink__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
                     <div class="product__price-wrapper">
@@ -184,22 +180,23 @@
                       <button class="product__button product__button--slide-size"></button>
                     </div>
                   </li>
-
+                  
                 </ul>
               </div>
 
+              <button class="popular-block__arrow popular-block__arrow--left"></button>
+              <button class="popular-block__arrow popular-block__arrow--right"></button>
+              
               <div class="popular-block__indicator slider-pagination">
-                <button type="button" class="popular-block__arrow popular-block__arrow--left"></button>
-                <button type="button" class="popular-block__arrow popular-block__arrow--right"></button>
-                <button type="button" class="slider-pagination"></button>
-                <button type="button" class="slider-pagination slider-pagination--big"></button>
-                <button type="button" class="slider-pagination"></button>
+                <button type="button" class="slider-pagination__button"></button>
+                <button type="button" class="slider-pagination__button slider-pagination__button--big"></button>
+                <button type="button" class="slider-pagination__button"></button>
               </div>
-
-          </div>
-
-          <button class="popular-block__show-all-mobile">Показать все</button>
-
+              
+            </div>
+            
+            <button class="popular-block__show-all-mobile">Показать все</button>
+            
         </div>
       </section>
 

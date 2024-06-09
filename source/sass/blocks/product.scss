@@ -1,5 +1,5 @@
 .product {
-    width: 100%;
+    width: 28% !important;
     padding: 37px 19px 23px;
     position: relative;
 
@@ -125,8 +125,8 @@
         height: 212px;
 
         @media (min-width: 1728px) {
-            width: 364px;
-            height: 364px;
+            width: 225px;
+            height: 225px;
         }
     }
 
@@ -158,7 +158,7 @@
     }
 
     &__price-new {
-        font-size: 24px;
+        font-size: 22px;
         line-height: 33px;
         margin-right: 20px;
 
