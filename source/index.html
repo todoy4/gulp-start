@@ -67,28 +67,31 @@
 
 
 
-    <main class="hero">
-      <div class="hero__container container">
-        <div class="hero__headline-block">
-          <div class="hero__title-wrapper">
-            <h1 class="hero__title">
-              <span>Найди Свои</span>
-              <span>Идеальные</span>
-              <span>Кроссы</span>
-            </h1>
-            <p class="hero__subtitle">
-              Какой-то супер-мотивирующий текст<br>
-              Чтоб купили прям вообще всё
-            </p>
+    <main>
+      <div class="hero">
+        <div class="hero__container container">
+          <div class="hero__headline-block">
+            <div class="hero__title-wrapper">
+              <h1 class="hero__title">
+                <span>Найди Свои</span>
+                <span>Идеальные</span>
+                <span>Кроссы</span>
+              </h1>
+              <p class="hero__subtitle">
+                Какой-то супер-мотивирующий текст<br>
+                Чтоб купили прям вообще всё
+              </p>
+            </div>
+            <button class="hero__button button">За покупками</button>
           </div>
-          <button class="hero__button button">За покупками</button>
-        </div>
 
-        <div class="hero__product">
-          <img class="hero__product-image" src="img/sneakers.png" alt="sneakers">
+          <div class="hero__product">
+            <img class="hero__product-image" src="img/sneakers.png" alt="sneakers">
 
-          <span class="hero__product-name">Trendy Slick Pro</span>
-          <span class="hero__product-price">3999 ₽</span>
+            <span class="hero__product-name">Trendy Slick Pro</span>
+            <span class="hero__product-price">3999 ₽</span>
+          </div>
+
         </div>
       </div>
 
@@ -139,13 +142,14 @@
             <p class="popular-block__text">Посмотрите, что чаще всего покупают у нас</p>
             <button class="popular-block__show-all">Показать все</button>
           </div>
-          
+
+          <button class="popular-block__arrow popular-block__arrow--left"></button>
           
           <div class="popular-block__slider">
               <div class="popular-block__slider-wrapper">
                 <ul class="popular-block__list swiper-wrapper">
                   
-                  <li class="product product--popular product--border-radius swiper-slide">
+                  <li class="product product--border-radius swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/black__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
                     <div class="product__price-wrapper">
@@ -154,7 +158,7 @@
                     </div>
                   </li>
 
-                  <li class="product product--popular product--border-radius product--hidden-slide swiper-slide">
+                  <li class="product product--border-radius product--hidden-slide swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/grey__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
                     <div class="product__price-wrapper">
@@ -163,7 +167,7 @@
                     </div>
                   </li>
 
-                  <li class="product product--popular product--border-radius product--hidden-slide swiper-slide">
+                  <li class="product product--border-radius product--hidden-slide swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/blue__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
                     <div class="product__price-wrapper">
@@ -172,7 +176,7 @@
                     </div>
                   </li>
 
-                  <li class="product product--popular product--border-radius product--hidden-slide  swiper-slide">
+                  <li class="product product--border-radius product--hidden-slide  swiper-slide">
                     <img class="product__image product__image--slide-size" src="img/pink__sneakers.png" alt="sneaker image 2">
                     <span class="product__name">Running sport shoe</span>
                     <div class="product__price-wrapper">
@@ -183,9 +187,8 @@
                   
                 </ul>
               </div>
-
-              <button class="popular-block__arrow popular-block__arrow--left"></button>
-              <button class="popular-block__arrow popular-block__arrow--right"></button>
+              
+              
               
               <div class="popular-block__indicator slider-pagination">
                 <button type="button" class="slider-pagination__button"></button>
@@ -194,11 +197,12 @@
               </div>
               
             </div>
+            <button class="popular-block__arrow popular-block__arrow--right"></button>
             
             <button class="popular-block__show-all-mobile">Показать все</button>
             
-        </div>
-      </section>
+          </div>
+        </section>
 
 
       <section class="banners">

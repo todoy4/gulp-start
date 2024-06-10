@@ -36,7 +36,7 @@ const newSwiper = new Swiper('.popular-block__slider-wrapper', {
 
   // If we need pagination
   pagination: {
-    el: '.slider-pagination',
+    el: '.popular-block__indicator',
     bulletActiveClass: 'slider-pagination__button--big',
     bulletClass: 'slider-pagination__button',
   },

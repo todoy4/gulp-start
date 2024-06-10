@@ -52,6 +52,11 @@
         }
     }
 
+    &__list {
+        padding-left: 0 !important;
+
+    }
+
     &__text {
         font-size: 18px;
         font-weight: 500;
@@ -94,14 +99,22 @@
 
     &__slider {
         position: relative;
+        overflow: hidden;
     }
     
     &__slider-wrapper {
-        width: 83%;
-        overflow-x: hidden;
+        width: 100%;
+        overflow: hidden;
+
+        @media (min-width: 768px) {
+            width: 300px;
+        }
+
+        @media (min-width: 1728px) {
+            width: 1152px;
+        }
     }
-    
-    
+
     &__slide-left {
         @include clear-button;
         
@@ -124,11 +137,8 @@
     &__slide-right {
         @include clear-button;
 
-        position: absolute;
         width: 27px;
         height: 15px;
-        top: 43%;
-        right: 286px;
 
         @media (min-width: 768px) {
             right: -11%;
@@ -154,11 +164,9 @@
         @media (min-width: 768px) {
         background-image: url(../img/slide-left.svg);
         background-repeat: no-repeat;
-        position: absolute;
         width: 20px;
+        align-self: center;
         height: 20px;
-        left: -3px;
-        top: 50%;
         transform: translateY(-50%);
         z-index: 3;
         cursor: pointer;
