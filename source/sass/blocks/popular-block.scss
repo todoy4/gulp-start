@@ -8,7 +8,6 @@
 
         @media (min-width: 768px) {
             display: flex;
-            gap: 72px;
             justify-content: center;
             padding-top: 80px;
             padding-bottom: 100px;
@@ -118,10 +117,8 @@
     &__slide-left {
         @include clear-button;
         
-        position: absolute;
         width: 27px;
-        height: 15px;
-        top: 43%;
+        
 
         @media (min-width: 768px) {
             left: -11%;
@@ -139,6 +136,7 @@
 
         width: 27px;
         height: 15px;
+        margin-left: 34px;
 
         @media (min-width: 768px) {
             right: -11%;
