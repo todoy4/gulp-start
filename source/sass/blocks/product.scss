@@ -106,6 +106,7 @@
             filter: drop-shadow(8px 7px 16.1px #00000015);
         }
     }
+
     &__image {
         display: block;
         margin: 0 auto;
@@ -113,10 +114,17 @@
         height: 212px;
 
         @media (min-width: 1728px) {
-            width: 225px;
-            height: 225px;
+            width: 364px;
+            height: 364px;
+        }
+        &--popular {
+            @media (min-width: 1728px) {
+                width: 225px;
+                height: 225px;
+            }
         }
     }
+
 
     &__name {
         display: block;
