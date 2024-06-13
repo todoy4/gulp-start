@@ -45,8 +45,6 @@ const newSwiper = new Swiper('.popular-block__slider-wrapper', {
   navigation: {
     nextEl: '.popular-block__arrow--right',
     prevEl: '.popular-block__arrow--left',
-
-    
   },
 });
 
