@@ -1,148 +1,81 @@
 .banner {
-    @include clear-list;
-
-    &__link-list {
-        @include clear-list;
-    }
-
-    &__item {
-        display: flex;
-        flex-direction: column;
-        padding-top: 40px;
-        padding-bottom: 56px;
-        margin-right: -10px;
-        margin-left: -10px;
-        position: relative;
-        
-
-        @media (min-width: 768px) {
-            padding-top: 50px;
-            padding-bottom: 138px;
-            margin-right: -20px;
-            margin-left: -20px;
-        }
-
-        @media (min-width: 1728px) {
-            align-items: end;
-        }
-
-        &--border-round {
-            @media (min-width: 1728px) {
-                border-radius: 20px;
-            }
-        }
-
-        &--bg-color {
-            background-color: #DC4B54;
-        }
-
-        &--bg-slick {
-            background-image: url("../img/slick-banner.svg");
-            background-size: 309px 101px;
-            background-position: bottom;
-            background-repeat: no-repeat;
-
-            @media (min-width: 768px) {
-                background-size: 710px 230px;
-                background-position: left bottom;
-
-            }
-
-            @media (min-width: 1728px) {
-                background-size: 976px 316px;
-            }
-        }
-
-        &::before {
-            @media (min-width: 768px) {
-                content: "";
-                width: 530px;
-                height: 700px;
-                background-image: url("../img/legs.png");
-                background-size: contain;
-                background-repeat: no-repeat;
-                position: absolute;
-                z-index: 5;
-                left: -12px;
-                top: -53px;
-
-                @media (min-width: 1728px) {
-                    width: 902px;
-                    height: 1054px;
-                    top: -372px;
-                    left: 25px auto;
-                }
-            }
-        }
-    }
-
-    &__content-wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        
-        @media (min-width: 1728px) {
-            width: 737px;
-            text-align: left;
-        }
-    }
-
     &__title {
+        color: #fff;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 29px;
         margin-bottom: 29px;
-        margin-top: 0;
-
-        &--text-size {
-            font-size: 24px;
-            line-height: 29px;
-            font-weight: 500;
-
-            @media (min-width: 768px) {
-                font-size: 58px;
-                line-height: 70px;
-                margin-bottom: 80px;
-            }
+        margin-top: 0px;
+        
+        @media (min-width: 768px) {
+            font-size: 58px;
+            line-height: 70px;
         }
-
-        &--text-white {
-            color: white;
+        
+        @media (min-width: 1728px) {
+            text-align: start;
         }
     }
-
+    
     &__button {
-        @include clear-button;
-
         display: block;
+        width: 300px;
+        height: 48px;
+        text-align: center;
+        font-weight: 700;
         font-size: 20px;
         line-height: 24px;
-        font-weight: 700;
-        padding: 15px 114px;
-        background-color: white;
-        color: #DC4B54;
-        margin-bottom: 45px;
-
+        padding: 12px 114px;
+        margin: 0 auto;
+       
+        
         @media (min-width: 768px) {
-            padding: 18px 50px;
-            margin-bottom: 30px;
+            width: 219px;
+            height: 66px;
+            font-size: 28px;
+            line-height: 34px;
+            padding: 16px 59px;
+            margin-top: 81px;
+        }
+        
+        @media (min-width: 1728px) {
+            margin-left: 0;
+            margin-top: 33px;
         }
     }
-
-    &__link-list {
+    
+    &__sneakershoe-wrapper {
         display: flex;
         gap: 42px;
+        margin-top: 50px;
+        margin-bottom: 46px;
+        justify-content: center;
+        
+        @media (min-width: 1728px) {
+            justify-content: start;
+        }
     }
-
-    &__link-item {
-        display: block;
+    
+    &__sneakershoe {
+        position: relative;
+        background-color: #fff;
         width: 71px;
         height: 71px;
-        border-radius: 15px;
-        background-color: white;
-
-        img {
-            width: 86px;
-            transform: translateX(-13%);
-        }
-
+        border-radius: 8px;
+    }
+    
+    &__sneakershoe-img {
+        position: absolute;
+        right: -19px;
+        bottom: -11px;
+        width: 105px;
+        height: 105px;
+        filter: drop-shadow(0px 3px 2px #00000005)
+        drop-shadow(7px 5px 0px #00000007)
+        drop-shadow(0px 12px 10px #00000009)
+        drop-shadow(0px 22px 18px #0000000B)
+        drop-shadow(0px 42px 33px #0000000D)
+        drop-shadow(0px 100px 80px #00000012);
     }
 }

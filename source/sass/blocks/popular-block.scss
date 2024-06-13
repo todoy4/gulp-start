@@ -1,4 +1,5 @@
 .popular-block {
+    
     color: #000;
 
     &__container {
@@ -7,7 +8,6 @@
 
         @media (min-width: 768px) {
             display: flex;
-            gap: 150px;
             justify-content: center;
             padding-top: 80px;
             padding-bottom: 100px;
@@ -49,6 +49,11 @@
             transform: translateY(-2px);
             margin-right: 22px;
         }
+    }
+
+    &__list {
+        padding-left: 0 !important;
+
     }
 
     &__text {
@@ -93,42 +98,44 @@
 
     &__slider {
         position: relative;
+        overflow: hidden;
     }
+    
+    &__slider-wrapper {
+        width: 100%;
+        overflow: hidden;
 
-    &__product-wrapper {
-        margin-bottom: 20px;
+        @media (min-width: 768px) {
+            width: 300px;
+        }
 
         @media (min-width: 1728px) {
-            display: flex;
-            gap: 67px;
+            width: 1152px;
         }
     }
 
     &__slide-left {
         @include clear-button;
-
-        position: absolute;
+        
         width: 27px;
-        height: 15px;
-        top: 43%;
+        
 
         @media (min-width: 768px) {
             left: -11%;
         }
-
+        
         @media (min-width: 1728px) {
             left: -4%;
         }
     }
+    
+  
 
     &__slide-right {
         @include clear-button;
 
-        position: absolute;
         width: 27px;
         height: 15px;
-        top: 43%;
-        right: 0;
 
         @media (min-width: 768px) {
             right: -11%;
@@ -144,6 +151,28 @@
 
         @media (min-width: 768px) {
             margin: 0;
+        }
+    }
+
+
+    &__arrow {
+        @include clear-button;
+        
+        @media (min-width: 768px) {
+        background-image: url(../img/slide-left.svg);
+        background-repeat: no-repeat;
+        width: 20px;
+        align-self: center;
+        height: 20px;
+        transform: translateY(-50%);
+        z-index: 3;
+        cursor: pointer;
+
+            &--right {
+                transform: translateY(-50%) rotate(180deg);
+                left: 1285px;
+                right: 25px;
+            }
         }
     }
 }
