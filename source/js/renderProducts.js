@@ -1,6 +1,7 @@
 import { renderCart } from './productCart.js';
-import { openModal } from './modal.js';
 import { addToStorage } from './storageLocal.js';
+import { Modal } from './modal.js';
+
 
 
 export default (products, template, target, isTargetList = false, templateClass = '') => {
@@ -31,13 +32,14 @@ products.forEach(product => {
     const priceEl = itemEl.querySelector('.product__price-new');
     const oldPriceEl = itemEl.querySelector('.product__price-old');
     const buttonEl = itemEl.querySelector('.product__button');
+    const modal = new Modal('catalog-modal');
 
 
     const { id, isBig: big, status, image: img, name, price, oldPrice } = product;
 
     buttonEl.addEventListener('click', (event) => {
         addToStorage('cart', product);
-        openModal(modalCart, event);
+        modal.openModal(event);
         renderCart();
     });
 

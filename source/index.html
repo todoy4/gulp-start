@@ -356,12 +356,10 @@
       <footer class="footer">
         <div class="footer__container container">
 
-          <div class="footer__manner-add manner manner--hidden">
-            <div class="manner__container container">
-              <button type="button" class="manner__close-button">
-                <img class="" src="img/closed.svg" alt="closed icon">
-              </button>
-              <h3 class="manner__title">Проверьте ваш email <br> и подтвердите подписку</h3>
+          <div id="footer-modal" class="footer__modal modal modal--hidden">
+            <div class="modal__container container">
+              <button class="modal__close"></button>
+              <h3 class="modal__title">Проверьте ваш email <br> и подтвердите подписку</h3>
             </div>
           </div>
 
@@ -441,10 +439,10 @@
       <p class="modal__title">Заказ оформлен.<br>
         Ожидайте звонка</p>
       <button class="modal-button button">Вернуться На Главную</button>
-    </div>
+    </div> 
 
 
-    <div class="shopping-cart modal modal--hidden">
+    <div id="shopping-cart" class="shopping-cart modal modal--hidden">
       <template id="shopping-cart-product">
         <li class="shopping-cart__item">
           <a href="#" class="shopping-cart__link">

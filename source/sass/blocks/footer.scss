@@ -10,14 +10,6 @@
         }
     }
 
-    &__manner-add {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 999;
-    }
-
     &__sub-modal {
         position: fixed;
         z-index: 50;
@@ -206,5 +198,9 @@
 
     &__bottom-text {
         font-size: 18px;
+    }
+
+    &__modal {
+        padding: 45px 23px;
     }
 }
