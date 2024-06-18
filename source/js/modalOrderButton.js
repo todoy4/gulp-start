@@ -1,8 +1,9 @@
+import { Modal } from './modal.js';
 
 const cart  = document.querySelector('.shopping-cart');
 const orderButton = document.querySelector('.shopping-cart__order-button');
-const modalCall = document.getElementById('modal-call');
 const inputModal = document.querySelector('.modal__input');
+const modalCall = new Modal('modal-call');
 
 inputModal.addEventListener('input', (event) => {
     const inputValue = event.target.value;
@@ -15,13 +16,14 @@ inputModal.addEventListener('input', (event) => {
 
 orderButton.addEventListener('click', (event) => {
     cart.classList.add('modal--hidden');
-    openModal(modalCall, event);
+    modalCall.openModal(event);
 })
 
-const modalSuccess = document.getElementById('modal_cart_success');
 const buttonModalCall = document.querySelector('.button--blue');
+const modalSuccess = new Modal('modal_cart_success');
+
 
 buttonModalCall.addEventListener('click', (event) => {
-    modalCall.classList.add('modal--hidden');
-    openModal(modalSuccess, event);
+    modalCall.closeModal('modal--hidden');
+    modalSuccess.openModal(event);
 })
