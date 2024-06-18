@@ -1,5 +1,5 @@
 import { getStorage, addToStorage, removeFromStorage } from './storageLocal.js'
-import { openModal } from './modal.js';
+import './modal.js';
 import formatPrice from './formatPrice.js';
 import './modalOrderButton.js'
 
@@ -8,10 +8,10 @@ const cart = document.querySelector('.shopping-cart');
 const cartOpenedButton = blockMenu.querySelector('.header__button-link');
 const cartCount = document.querySelector('.header__item-counter');
 
+
 cartOpenedButton.addEventListener('click', (event) => {
     openModal(cart, event);
 })
- 
 
 const editPructCount = (clone, product, operation = 'plus') => {
     const input = clone.querySelector('.shopping-cart__count').value; 

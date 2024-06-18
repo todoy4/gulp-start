@@ -1,5 +1,4 @@
 import { renderCart } from './productCart.js';
-import { openModal } from './modal.js';
 import { addToStorage } from './storageLocal.js';
 
 

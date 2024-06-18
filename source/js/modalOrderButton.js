@@ -1,4 +1,3 @@
-import { openModal } from './modal.js';
 
 const cart  = document.querySelector('.shopping-cart');
 const orderButton = document.querySelector('.shopping-cart__order-button');
