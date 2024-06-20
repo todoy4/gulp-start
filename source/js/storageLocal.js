@@ -1,20 +1,21 @@
 export class Storage {
 
-    getStorage = (storageName) => {
+    getStorage (storageName) {
         return JSON.parse(localStorage.getItem(storageName));
     };
         
-    addToStorage = (storageName, data) => {
+    addToStorage (storageName, data) {
         let storageArr = [data];
         const storageData = JSON.parse(localStorage.getItem(storageName));
     
         if(storageData) {
             storageArr = [...storageData, ...storageArr];
-            }    
+        }
+            
         localStorage.setItem(storageName, JSON.stringify(storageArr));
     };
     
-    removeFromStorage = (storageName, id) => {
+    removeFromStorage (storageName, id) {
         const storageData = JSON.parse(localStorage.getItem(storageName));
     
         if(!storageData) {
