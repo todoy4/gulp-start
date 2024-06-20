@@ -1,13 +1,13 @@
-import { getStorage, addToStorage, removeFromStorage } from './storageLocal.js'
+import { Storage } from './storageLocal.js'
 import { Modal } from './modal.js';
 import formatPrice from './formatPrice.js';
 import './modalOrderButton.js'
 
 const blockMenu = document.querySelector('.header__button-shop');
-const cart = document.querySelector('.shopping-cart');
 const cartOpenedButton = blockMenu.querySelector('.header__button-link');
 const cartCount = document.querySelector('.header__item-counter');
 const modal = new Modal('shopping-cart');
+const storage = new Storage();
 
 cartOpenedButton.addEventListener('click', (event) => {
     modal.openModal(event);
@@ -34,7 +34,7 @@ const editPructCount = (clone, product, operation = 'plus') => {
 }
 
 export const renderCart = () => {
-    const data = getStorage('cart');
+    const data = storage.getStorage('cart'); ;
 
     if(!data?.length) {
         return;
@@ -74,13 +74,13 @@ export const renderCart = () => {
                 clone.querySelector('.shopping-cart__count').value = 0;
             }else{
                 editPructCount(clone, product, 'minus');
-                removeFromStorage('cart', product.id);
+                storage.removeFromStorage('cart', product.id);
             }
             
         })
 
         clone.querySelector('.shopping-cart__plus').addEventListener('click', () => {
-            addToStorage('cart', product);
+            storage.addToStorage('cart', product);
             
             editPructCount(clone, product, 'plus');
         })
