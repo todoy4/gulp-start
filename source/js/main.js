@@ -4,6 +4,7 @@ import './slider.js';
 import './productCart.js';
 import './menu.js';
 import './footerEmail.js';
+import './dz.js';
 
 const catalogList = document.querySelector('.catalog__product-wrapper');
 const catalogItemTemplate = document.querySelector('#product').content;

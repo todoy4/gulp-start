@@ -1,12 +1,15 @@
 .footer {
     &__container {
-        padding-top: 27px;
-        padding-bottom: 20px;
-        background-color: black;
-        color: white;
-
+        background-color: #000;
+        color: #fff;
+        padding: 15px 10px 20px;
+        
+        @media (min-width: 768px) {
+            padding: 30px 20px 51px;
+        }
+        
         @media (min-width: 1728px) {
-            padding-top: 85px;
+            padding: 85px 84px 30px 84px;
         }
     }
 
