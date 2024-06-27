@@ -1,9 +1,12 @@
 .footer {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 10px 20px;
+    
     &__container {
-        background-color: #000;
-        color: #fff;
-        padding: 15px 10px 20px;
-        
+        display: flex;
+        justify-content: center;
+
         @media (min-width: 768px) {
             padding: 30px 20px 51px;
         }
@@ -27,6 +30,10 @@
             flex-wrap: wrap;
             justify-content: space-between;
         }     
+        
+        @media(min-width: 1728px) {
+            gap: 232px; 
+        }
     }
 
     &__content-wrapper {
